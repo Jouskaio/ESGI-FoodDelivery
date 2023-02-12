@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0B1173329992E30009761A7 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1173229992E30009761A7 /* ApiService.swift */; };
+		E0B117352999304D009761A7 /* PackageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B117342999304D009761A7 /* PackageDataModel.swift */; };
+		E0B11737299932B4009761A7 /* ManagePackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B11736299932B4009761A7 /* ManagePackageViewModel.swift */; };
 		E0E49EC22996EA89004E7365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E49EC12996EA89004E7365 /* AppDelegate.swift */; };
 		E0E49ECB2996EA8A004E7365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E49ECA2996EA8A004E7365 /* Assets.xcassets */; };
 		E0E49ECE2996EA8A004E7365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E49ECC2996EA8A004E7365 /* LaunchScreen.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0B1173229992E30009761A7 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E0B117342999304D009761A7 /* PackageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDataModel.swift; sourceTree = "<group>"; };
+		E0B11736299932B4009761A7 /* ManagePackageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePackageViewModel.swift; sourceTree = "<group>"; };
 		E0E49EBE2996EA89004E7365 /* EFD-Boss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EFD-Boss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E49EC12996EA89004E7365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E49ECA2996EA8A004E7365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,12 +103,15 @@
 		E0E49EC02996EA89004E7365 /* EFD-Boss */ = {
 			isa = PBXGroup;
 			children = (
+				E0B1173229992E30009761A7 /* ApiService.swift */,
 				E0E49EC12996EA89004E7365 /* AppDelegate.swift */,
 				E0E49ECA2996EA8A004E7365 /* Assets.xcassets */,
 				E0E49ECC2996EA8A004E7365 /* LaunchScreen.storyboard */,
 				E0E49ECF2996EA8A004E7365 /* Info.plist */,
 				E0E49EF52996EC6D004E7365 /* HomeViewController.swift */,
 				E0E49EF62996EC6D004E7365 /* HomeViewController.xib */,
+				E0B117342999304D009761A7 /* PackageDataModel.swift */,
+				E0B11736299932B4009761A7 /* ManagePackageViewModel.swift */,
 			);
 			path = "EFD-Boss";
 			sourceTree = "<group>";
@@ -255,8 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B117352999304D009761A7 /* PackageDataModel.swift in Sources */,
+				E0B11737299932B4009761A7 /* ManagePackageViewModel.swift in Sources */,
 				E0E49EC22996EA89004E7365 /* AppDelegate.swift in Sources */,
 				E0E49EF72996EC6D004E7365 /* HomeViewController.swift in Sources */,
+				E0B1173329992E30009761A7 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
