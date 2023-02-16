@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var package_sender: UILabel!
     
     let packageViewModel = ManagePackageViewModel()
-    var response: PackageDetails;
+    var response: [PackageDetails] = [];
 
     
     override func viewDidLoad() {
@@ -41,10 +41,38 @@ class HomeViewController: UIViewController {
         package_deadline.layer.borderColor = UIColor.orange.cgColor
 
         self.package_table.dataSource = self
-        
+        /*
         packageViewModel.returnPackage(idPackage: 1) { data in
+            print(data)
             self.response = data.package
+        }*/
+        
+        packageViewModel.returnPackage(idPackage: 1) { packageData in
+            if packageData.status == 200 {
+                   print(packageData.package)
+                   // Utilisez les données du packageData ici
+               } else {
+                   print("Error: \(packageData.error ?? "Unknown error")")
+               }
         }
+        
+        print("croute")
+        /*
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        for data in self.response {
+            print("chou")
+            package_name.text = data.package_name
+            package_weight.text = data.package_weight
+            package_recovery.text = data.package_recovery_city
+            destination_number.text = String(describing: data.package_destination_number)
+            destination_street.text = data.package_destination_street
+            destination_zip.text = String(describing: data.package_destination_zip)
+            destination_city.text = data.package_destination_city
+            package_note.text = data.package_note
+            package_date_deadline.text = dateFormatter.string(from: data.package_deadline)
+        }
+         */
     }
     
 }

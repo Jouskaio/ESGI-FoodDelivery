@@ -8,5 +8,5 @@
 import Foundation
 
 class ApiService {
-    let baseUrl = "http://localhost:2000/api/"
+    let baseUrl = "http://192.168.1.27:2000/api/"
 }

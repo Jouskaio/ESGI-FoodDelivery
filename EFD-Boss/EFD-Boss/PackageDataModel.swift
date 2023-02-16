@@ -7,16 +7,16 @@
 
 import Foundation
 
-class PackageData:Codable {
+class PackageData:Codable, Identifiable {
     var status: Int
     var package: PackageDetails
     var error: String?
 }
 
-class PackageDetails:Codable, Identifiable {
+class PackageDetails:Codable {
     var id_package: Int
     var package_name: String
-    var package_weight: Float
+    var package_weight: String
     var package_deadline: Date
     var package_note: String?
     var package_destination_number: Int

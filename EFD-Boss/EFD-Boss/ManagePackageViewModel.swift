@@ -12,8 +12,6 @@ class ManagePackageViewModel: ObservableObject {
     let apiService = ApiService()
     
     func returnPackage(idPackage: Int,completion: @escaping (PackageData) -> Void){
-        let apiService = ApiService()
-        
         var component = URLComponents()
         component.path = "package"
         component.queryItems = [
@@ -39,5 +37,4 @@ class ManagePackageViewModel: ObservableObject {
             }
         }.resume()
     }
-    
 }
