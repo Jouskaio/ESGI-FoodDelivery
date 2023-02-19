@@ -38,3 +38,9 @@ struct UnassignedPackage: Codable {
     let package_destination_city: String
 }
 
+struct UpdatePackage: Codable {
+    var status: Int
+    var package: String
+    var error: String?
+}
+

@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var package_note: UILabel!
     @IBOutlet var package_date_deadline: UILabel!
     
+    var id_package: Int = 0
     
     let packageViewModel = ManagePackageViewModel()
     var unassignedPackages: [UnassignedPackage] = []
@@ -91,6 +92,7 @@ class HomeViewController: UIViewController {
                     self.package_note.text = data.package.package_note
                     let deadlineArr = data.package.package_deadline.components(separatedBy: "T")
                     self.package_date_deadline.text = deadlineArr[0]
+                    self.id_package = data.package.id
                 }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
@@ -133,6 +135,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // Traiter la sélection d'une cellule
+        let selectedEmployer = employers[row]
+        print("Employer sélectionné: \(selectedEmployer.employer_name) \(self.id_package), colonne: \(selectedEmployer.id)")
+        packageViewModel.chooseEmployerPackage(idEmployer: String(describing:selectedEmployer.id), idPackage: String(describing:self.id_package)) { result in
+            print(result)
+        }
     }
 }
