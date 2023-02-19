@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var logoView: UIImageView!
     @IBOutlet var package_deadline: UIView!
     @IBOutlet var package_table: UITableView!
+    @IBOutlet var package_employer: UIPickerView!
     
     @IBOutlet var titlePage: UILabel!
     @IBOutlet var package_name: UILabel!
@@ -23,10 +24,13 @@ class HomeViewController: UIViewController {
     @IBOutlet var destination_city: UILabel!
     @IBOutlet var package_note: UILabel!
     @IBOutlet var package_date_deadline: UILabel!
-    @IBOutlet var package_sender: UILabel!
+    
     
     let packageViewModel = ManagePackageViewModel()
     var unassignedPackages: [UnassignedPackage] = []
+    
+    let employerViewModel = ManageEmployerViewModel()
+    var employers: [Employer] = []
     
     
     override func viewDidLoad() {
@@ -44,6 +48,9 @@ class HomeViewController: UIViewController {
         self.package_table.delegate = self
         self.package_table.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        package_employer.dataSource = self
+        package_employer.delegate = self
+        
         packageViewModel.unassignedPackage { result in
             switch result {
             case .success(let data):
@@ -51,6 +58,17 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.package_table.reloadData()
                 }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+        
+        employerViewModel.allEmployers { result in
+            switch result {
+            case .success(let data):
+                print("Success")
+                self.employers = data.employer
+                self.package_employer.reloadAllComponents()
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             }
@@ -82,7 +100,7 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return unassignedPackages.count
     }
@@ -90,7 +108,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let package = unassignedPackages[indexPath.row]
-        cell.textLabel?.text = "Package Name: \(package.package_name)\nDelivery Address: \(package.package_destination_city)"
+        cell.textLabel?.text = "Produit: \(package.package_name)\nVille de livraison: \(package.package_destination_city)"
         cell.textLabel?.numberOfLines = 0
         return cell
     }
@@ -99,5 +117,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let package = unassignedPackages[indexPath.row]
         // Traiter la sélection d'une cellule
         returnSpecialPackage(idPackage: String(describing:package.id) )
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return employers.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let employer = employers[row]
+        return "\(employer.employer_name) \(employer.employer_firstname)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // Traiter la sélection d'une cellule
     }
 }

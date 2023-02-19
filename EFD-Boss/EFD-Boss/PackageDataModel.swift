@@ -27,7 +27,7 @@ struct Package: Codable {
 }
 
 struct AllUnassignedPackage:Codable{
-    var status: Int?
+    var status: Int
     var package: [UnassignedPackage]
     var error: String?
 }
