@@ -52,24 +52,15 @@ class HomeViewController: UIViewController {
         package_employer.dataSource = self
         package_employer.delegate = self
         
-        packageViewModel.unassignedPackage { result in
-            switch result {
-            case .success(let data):
-                self.unassignedPackages = data.package
-                DispatchQueue.main.async {
-                    self.package_table.reloadData()
-                }
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+        getUnassignedPackage()
         
         employerViewModel.allEmployers { result in
             switch result {
             case .success(let data):
-                print("Success")
                 self.employers = data.employer
-                self.package_employer.reloadAllComponents()
+                DispatchQueue.main.async {
+                    self.package_employer.reloadAllComponents()
+                }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             }
@@ -93,6 +84,21 @@ class HomeViewController: UIViewController {
                     let deadlineArr = data.package.package_deadline.components(separatedBy: "T")
                     self.package_date_deadline.text = deadlineArr[0]
                     self.id_package = data.package.id
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func getUnassignedPackage() {
+        let packageViewModel = ManagePackageViewModel()
+        packageViewModel.unassignedPackage { result in
+            switch result {
+            case .success(let data):
+                self.unassignedPackages = data.package
+                DispatchQueue.main.async {
+                    self.package_table.reloadData()
                 }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
@@ -136,9 +142,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, UIPick
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedEmployer = employers[row]
-        print("Employer sélectionné: \(selectedEmployer.employer_name) \(self.id_package), colonne: \(selectedEmployer.id)")
         packageViewModel.chooseEmployerPackage(idEmployer: String(describing:selectedEmployer.id), idPackage: String(describing:self.id_package)) { result in
-            print(result)
+            switch result {
+            case .success(_):
+                self.getUnassignedPackage()
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
 }
