@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E009CE1E29A6B920008D6D83 /* ManageDeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009CE1D29A6B920008D6D83 /* ManageDeliveryViewModel.swift */; };
+		E009CE2029A6B97F008D6D83 /* DeliveryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009CE1F29A6B97F008D6D83 /* DeliveryDataModel.swift */; };
+		E009CE2329A6C82C008D6D83 /* SpecialDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009CE2129A6C82C008D6D83 /* SpecialDeliveryViewController.swift */; };
+		E009CE2429A6C82C008D6D83 /* SpecialDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E009CE2229A6C82C008D6D83 /* SpecialDeliveryViewController.xib */; };
 		E01E833F29A2A9F90032150F /* ManageEmployerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E833E29A2A9F90032150F /* ManageEmployerViewModel.swift */; };
 		E01E834129A2AA5D0032150F /* EmployerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01E834029A2AA5D0032150F /* EmployerDataModel.swift */; };
 		E0B1173329992E30009761A7 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B1173229992E30009761A7 /* ApiService.swift */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E009CE1D29A6B920008D6D83 /* ManageDeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliveryViewModel.swift; sourceTree = "<group>"; };
+		E009CE1F29A6B97F008D6D83 /* DeliveryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDataModel.swift; sourceTree = "<group>"; };
+		E009CE2129A6C82C008D6D83 /* SpecialDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialDeliveryViewController.swift; sourceTree = "<group>"; };
+		E009CE2229A6C82C008D6D83 /* SpecialDeliveryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialDeliveryViewController.xib; sourceTree = "<group>"; };
 		E01E833E29A2A9F90032150F /* ManageEmployerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployerViewModel.swift; sourceTree = "<group>"; };
 		E01E834029A2AA5D0032150F /* EmployerDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerDataModel.swift; sourceTree = "<group>"; };
 		E0B1173229992E30009761A7 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 			children = (
 				E0B117342999304D009761A7 /* PackageDataModel.swift */,
 				E01E834029A2AA5D0032150F /* EmployerDataModel.swift */,
+				E009CE1F29A6B97F008D6D83 /* DeliveryDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -106,6 +115,7 @@
 			children = (
 				E0B11736299932B4009761A7 /* ManagePackageViewModel.swift */,
 				E01E833E29A2A9F90032150F /* ManageEmployerViewModel.swift */,
+				E009CE1D29A6B920008D6D83 /* ManageDeliveryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 				E0DC3A8F29A4299200499AFC /* DeliveryViewController.xib */,
 				E0DC3A9229A436C000499AFC /* CreateDeliveryViewController.swift */,
 				E0DC3A9329A436C000499AFC /* CreateDeliveryViewController.xib */,
+				E009CE2129A6C82C008D6D83 /* SpecialDeliveryViewController.swift */,
+				E009CE2229A6C82C008D6D83 /* SpecialDeliveryViewController.xib */,
 			);
 			path = "EFD-Boss";
 			sourceTree = "<group>";
@@ -273,6 +285,7 @@
 			files = (
 				E0E49ECE2996EA8A004E7365 /* LaunchScreen.storyboard in Resources */,
 				E0DC3A9529A436C000499AFC /* CreateDeliveryViewController.xib in Resources */,
+				E009CE2429A6C82C008D6D83 /* SpecialDeliveryViewController.xib in Resources */,
 				E0E49ECB2996EA8A004E7365 /* Assets.xcassets in Resources */,
 				E0DC3A9129A4299200499AFC /* DeliveryViewController.xib in Resources */,
 				E0E49EF82996EC6D004E7365 /* HomeViewController.xib in Resources */,
@@ -302,6 +315,7 @@
 			files = (
 				E0B117352999304D009761A7 /* PackageDataModel.swift in Sources */,
 				E0DC3A9429A436C000499AFC /* CreateDeliveryViewController.swift in Sources */,
+				E009CE2029A6B97F008D6D83 /* DeliveryDataModel.swift in Sources */,
 				E0B11737299932B4009761A7 /* ManagePackageViewModel.swift in Sources */,
 				E0DC3A9029A4299200499AFC /* DeliveryViewController.swift in Sources */,
 				E0E49EC22996EA89004E7365 /* AppDelegate.swift in Sources */,
@@ -309,6 +323,8 @@
 				E01E834129A2AA5D0032150F /* EmployerDataModel.swift in Sources */,
 				E01E833F29A2A9F90032150F /* ManageEmployerViewModel.swift in Sources */,
 				E0B1173329992E30009761A7 /* ApiService.swift in Sources */,
+				E009CE2329A6C82C008D6D83 /* SpecialDeliveryViewController.swift in Sources */,
+				E009CE1E29A6B920008D6D83 /* ManageDeliveryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

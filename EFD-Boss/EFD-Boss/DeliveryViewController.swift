@@ -16,15 +16,32 @@ class DeliveryViewController: UIViewController {
     @IBOutlet var employer_table: UITableView!
     @IBOutlet var package_table: UITableView!
     @IBAction func button_submit(_ sender: UIButton) {
-        let createViewController = CreateDeliveryViewController(nibName: "CreateDeliveryViewController", bundle: nil)
-        createViewController.employer_id = employer_id
-        createViewController.modalPresentationStyle = .fullScreen
-        self.present(createViewController, animated: true, completion: nil)
+        if(pressionButtton == false){
+            createDelivery(idEmployer: employer_id)
+            pressionButtton = true
+            sender.setTitle("Accéder à la tournée", for: .normal)
+        } else {
+            let createViewController = CreateDeliveryViewController(nibName: "CreateDeliveryViewController", bundle: nil)
+            createViewController.employer_id = employer_id
+            createViewController.delivery_id = delivery_id
+            createViewController.modalPresentationStyle = .fullScreen
+            self.present(createViewController, animated: true, completion: nil)
+            pressionButtton = false
+            sender.setTitle("Créer une tournée", for: .normal)
+        }
+    }
+    @IBAction func see_delivery(_ sender: UIButton) {
+        let specialViewController = SpecialDeliveryViewController(nibName: "SpecialDeliveryViewController", bundle: nil)
+        specialViewController.employer_id = employer_id
+        specialViewController.modalPresentationStyle = .fullScreen
+        self.present(specialViewController, animated: true, completion: nil)
     }
     
     var employers: [Employer] = []
     var packages: [UnassignedPackage] = []
     var employer_id: String = ""
+    var delivery_id: String = ""
+    var pressionButtton: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +61,7 @@ class DeliveryViewController: UIViewController {
         self.package_table.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         returnAllEmployers()
+
     }
     
     private func returnAllEmployers() {
@@ -70,6 +88,18 @@ class DeliveryViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.package_table.reloadData()
                 }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func createDelivery(idEmployer: String) {
+        let deliveryViewModel = ManageDeliveryViewModel()
+        deliveryViewModel.createDelivery(idEmployer: idEmployer) { result in
+            switch result {
+            case .success(let data):
+                self.delivery_id = String(describing:data.delivery)
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
             }

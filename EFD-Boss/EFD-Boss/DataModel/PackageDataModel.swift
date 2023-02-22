@@ -44,3 +44,15 @@ struct UpdatePackage: Codable {
     var error: String?
 }
 
+struct AllDeliveryPackage:Codable{
+    var status: Int
+    var package: [DeliveryPackage]
+    var error: String?
+}
+
+struct DeliveryPackage: Codable {
+    let id: Int
+    let package_name: String
+    let package_destination_city: String
+    let package_recovery_city: String
+}
