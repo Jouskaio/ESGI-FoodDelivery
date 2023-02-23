@@ -1,0 +1,78 @@
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "1bB-w5-Sxx"; */
+"1bB-w5-Sxx.text" = "E-mail";
+
+/* Class = "UILabel"; text = "LOGIN"; ObjectID = "258-Pg-ENd"; */
+"258-Pg-ENd.text" = "LOGIN";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "F6h-27-P2u"; */
+"F6h-27-P2u.text" = "Password";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "FI5-NE-xDD"; */
+"FI5-NE-xDD.text" = "Password";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "HvR-Jy-1HX"; */
+"HvR-Jy-1HX.text" = "E-mail";
+
+/* Class = "UIButton"; configuration.title = "Create a new acount"; ObjectID = "KmP-yB-Jzi"; */
+"KmP-yB-Jzi.configuration.title" = "Create a new acount";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KmP-yB-Jzi"; */
+"KmP-yB-Jzi.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "SBe-xd-qOo"; */
+"SBe-xd-qOo.configuration.title" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "SBe-xd-qOo"; */
+"SBe-xd-qOo.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "TC2-9g-Tg7"; */
+"TC2-9g-Tg7.configuration.title" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TC2-9g-Tg7"; */
+"TC2-9g-Tg7.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Deliverer"; ObjectID = "XLr-tY-Cia"; */
+"XLr-tY-Cia.text" = "Deliverer";
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "Y0M-28-gvF"; */
+"Y0M-28-gvF.configuration.title" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Y0M-28-gvF"; */
+"Y0M-28-gvF.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "ZEd-XV-9MG"; */
+"ZEd-XV-9MG.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZEd-XV-9MG"; */
+"ZEd-XV-9MG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Forgot Password ?"; ObjectID = "ba5-t9-yL4"; */
+"ba5-t9-yL4.text" = "Forgot Password ?";
+
+/* Class = "UITextField"; text = "**************"; ObjectID = "jAc-1t-2CE"; */
+"jAc-1t-2CE.text" = "**************";
+
+/* Class = "UITextField"; text = "username"; ObjectID = "niq-YO-5j5"; */
+"niq-YO-5j5.text" = "username";
+
+/* Class = "UILabel"; text = "REGISTER"; ObjectID = "oR0-ih-Ox6"; */
+"oR0-ih-Ox6.text" = "REGISTER";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "s1X-1o-N7H"; */
+"s1X-1o-N7H.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "s1X-1o-N7H"; */
+"s1X-1o-N7H.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "ubE-Mq-xhw"; */
+"ubE-Mq-xhw.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ubE-Mq-xhw"; */
+"ubE-Mq-xhw.normalTitle" = "Button";
+
+/* Class = "UITextField"; text = "**************"; ObjectID = "v6p-uD-ndv"; */
+"v6p-uD-ndv.text" = "**************";
+
+/* Class = "UITextField"; text = "username"; ObjectID = "wQH-Ht-EZY"; */
+"wQH-Ht-EZY.text" = "username";

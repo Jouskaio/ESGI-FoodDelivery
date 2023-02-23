@@ -1,0 +1,66 @@
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "1bB-w5-Sxx"; */
+"1bB-w5-Sxx.text" = "E-mail";
+
+/* Class = "UILabel"; text = "LOGIN"; ObjectID = "258-Pg-ENd"; */
+"258-Pg-ENd.text" = "connexion";
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "4dq-N7-X2Z"; */
+"4dq-N7-X2Z.configuration.title" = "Sign up";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4dq-N7-X2Z"; */
+"4dq-N7-X2Z.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "F6h-27-P2u"; */
+"F6h-27-P2u.text" = "Password";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "FI5-NE-xDD"; */
+"FI5-NE-xDD.text" = "Mot de passe";
+
+/* Class = "UIButton"; configuration.title = "Log in"; ObjectID = "Fc0-4D-Uyb"; */
+"Fc0-4D-Uyb.configuration.title" = "connexion";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Fc0-4D-Uyb"; */
+"Fc0-4D-Uyb.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "HvR-Jy-1HX"; */
+"HvR-Jy-1HX.text" = "E-mail";
+
+/* Class = "UIButton"; configuration.title = "Create a new acount"; ObjectID = "KmP-yB-Jzi"; */
+"KmP-yB-Jzi.configuration.title" = "Créer un nouveau compte";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KmP-yB-Jzi"; */
+"KmP-yB-Jzi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Deliverer"; ObjectID = "XLr-tY-Cia"; */
+"XLr-tY-Cia.text" = "Livreur";
+
+/* Class = "UIButton"; configuration.title = "Log in"; ObjectID = "YAC-hj-m5j"; */
+"YAC-hj-m5j.configuration.title" = "connexion";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YAC-hj-m5j"; */
+"YAC-hj-m5j.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Forgot Password ?"; ObjectID = "ba5-t9-yL4"; */
+"ba5-t9-yL4.text" = "Mot de passe oublié?";
+
+/* Class = "UIButton"; configuration.title = "Sign up"; ObjectID = "ivd-Hb-sjL"; */
+"ivd-Hb-sjL.configuration.title" = "S'inscrire";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ivd-Hb-sjL"; */
+"ivd-Hb-sjL.normalTitle" = "Button";
+
+/* Class = "UITextField"; text = "**************"; ObjectID = "jAc-1t-2CE"; */
+"jAc-1t-2CE.text" = "**************";
+
+/* Class = "UITextField"; text = "username"; ObjectID = "niq-YO-5j5"; */
+"niq-YO-5j5.text" = "nom d'utilisateur";
+
+/* Class = "UILabel"; text = "REGISTER"; ObjectID = "oR0-ih-Ox6"; */
+"oR0-ih-Ox6.text" = "ENREGISTRER";
+
+/* Class = "UITextField"; text = "**************"; ObjectID = "v6p-uD-ndv"; */
+"v6p-uD-ndv.text" = "**************";
+
+/* Class = "UITextField"; text = "email"; ObjectID = "wQH-Ht-EZY"; */
+"wQH-Ht-EZY.text" = "email";
