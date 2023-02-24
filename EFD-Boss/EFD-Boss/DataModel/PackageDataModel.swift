@@ -26,6 +26,26 @@ struct Package: Codable {
     let package_recovery_city: String?
 }
 
+struct AssignatedPackageData:Codable{
+    var status: Int
+    var package: AssignatedPackage
+    var error: String?
+}
+
+struct AssignatedPackage: Codable {
+    let id: Int
+    let package_name: String
+    let package_weight: String
+    let package_deadline: String
+    let package_destination_number: Int
+    let package_destination_street: String
+    let package_destination_city: String
+    let package_destination_zip: Int
+    let package_recovery_city: String?
+    let package_id_employer: Int
+    let package_id_delivery: Int
+}
+
 struct AllUnassignedPackage:Codable{
     var status: Int
     var package: [UnassignedPackage]
