@@ -10,6 +10,11 @@ import Firebase
 
 class CreateAcountViewController: UIViewController {
 
+    
+    @IBOutlet weak var firstnameTextField: UITextField!
+    
+    @IBOutlet weak var lastnameTextField: UITextField!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!

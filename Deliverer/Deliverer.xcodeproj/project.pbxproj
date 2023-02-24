@@ -21,6 +21,12 @@
 		DD60A1E82997EE2F005219F4 /* DelivererUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD60A1E72997EE2F005219F4 /* DelivererUITests.swift */; };
 		DD60A1EA2997EE2F005219F4 /* DelivererUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD60A1E92997EE2F005219F4 /* DelivererUITestsLaunchTests.swift */; };
 		DD644EA429A6CA4500987AAC /* logo 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD644EA329A6CA4500987AAC /* logo 2.jpg */; };
+		DD73677C29A6EDF800D66D3E /* Tournee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73677B29A6EDF800D66D3E /* Tournee.swift */; };
+		DD73677E29A6EE3500D66D3E /* Colis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73677D29A6EE3500D66D3E /* Colis.swift */; };
+		DD73678029A6EE8000D66D3E /* TourneeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73677F29A6EE8000D66D3E /* TourneeCell.swift */; };
+		DD73678229A6EECD00D66D3E /* TourneeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73678129A6EECD00D66D3E /* TourneeListViewController.swift */; };
+		DD73678429A7704C00D66D3E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD73678329A7704B00D66D3E /* Media.xcassets */; };
+		DD73678629A7802500D66D3E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73678529A7802500D66D3E /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		DD644EA629A6CC9100987AAC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DD644EA729A6CCAC00987AAC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		DD644EA829A6CCAC00987AAC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DD73677B29A6EDF800D66D3E /* Tournee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournee.swift; sourceTree = "<group>"; };
+		DD73677D29A6EE3500D66D3E /* Colis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colis.swift; sourceTree = "<group>"; };
+		DD73677F29A6EE8000D66D3E /* TourneeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneeCell.swift; sourceTree = "<group>"; };
+		DD73678129A6EECD00D66D3E /* TourneeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneeListViewController.swift; sourceTree = "<group>"; };
+		DD73678329A7704B00D66D3E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		DD73678529A7802500D66D3E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,7 @@
 		DD05F62129A68A41007640B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD73678329A7704B00D66D3E /* Media.xcassets */,
 				DD644EA329A6CA4500987AAC /* logo 2.jpg */,
 			);
 			path = Resources;
@@ -122,7 +135,9 @@
 		DD60A1C52997EE2E005219F4 /* Deliverer */ = {
 			isa = PBXGroup;
 			children = (
-				DD05F62129A68A41007640B1 /* Resources */,
+				DD73678529A7802500D66D3E /* CustomTextField.swift */,
+				DD73678129A6EECD00D66D3E /* TourneeListViewController.swift */,
+				DD73677F29A6EE8000D66D3E /* TourneeCell.swift */,
 				DD60A1C62997EE2E005219F4 /* AppDelegate.swift */,
 				DD60A1C82997EE2E005219F4 /* SceneDelegate.swift */,
 				DD60A1CA2997EE2E005219F4 /* ViewController.swift */,
@@ -131,8 +146,11 @@
 				DD60A1D12997EE2F005219F4 /* LaunchScreen.storyboard */,
 				DD60A1D42997EE2F005219F4 /* Info.plist */,
 				DD05F61A29A64308007640B1 /* GoogleService-Info.plist */,
+				DD73677D29A6EE3500D66D3E /* Colis.swift */,
 				DD05F61429A632F3007640B1 /* LoginViewController.swift */,
 				DD05F61629A633FC007640B1 /* CreateAcountViewController.swift */,
+				DD73677B29A6EDF800D66D3E /* Tournee.swift */,
+				DD05F62129A68A41007640B1 /* Resources */,
 			);
 			path = Deliverer;
 			sourceTree = "<group>";
@@ -270,6 +288,7 @@
 				DD05F61B29A64308007640B1 /* GoogleService-Info.plist in Resources */,
 				DD644EA429A6CA4500987AAC /* logo 2.jpg in Resources */,
 				DD60A1D02997EE2F005219F4 /* Assets.xcassets in Resources */,
+				DD73678429A7704C00D66D3E /* Media.xcassets in Resources */,
 				DD60A1CE2997EE2E005219F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,10 +314,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD73677C29A6EDF800D66D3E /* Tournee.swift in Sources */,
 				DD05F61529A632F3007640B1 /* LoginViewController.swift in Sources */,
 				DD60A1CB2997EE2E005219F4 /* ViewController.swift in Sources */,
 				DD60A1C72997EE2E005219F4 /* AppDelegate.swift in Sources */,
+				DD73678629A7802500D66D3E /* CustomTextField.swift in Sources */,
 				DD60A1C92997EE2E005219F4 /* SceneDelegate.swift in Sources */,
+				DD73677E29A6EE3500D66D3E /* Colis.swift in Sources */,
+				DD73678029A6EE8000D66D3E /* TourneeCell.swift in Sources */,
+				DD73678229A6EECD00D66D3E /* TourneeListViewController.swift in Sources */,
 				DD05F61729A633FC007640B1 /* CreateAcountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,15 +503,15 @@
 		DD60A1EE2997EE2F005219F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 634XQ7A57Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Deliverer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -511,15 +535,15 @@
 		DD60A1EF2997EE2F005219F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 634XQ7A57Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Deliverer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
