@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpecialDeliveryViewController" customModule="EFD_Boss" customModuleProvider="target">
             <connections>
+                <outlet property="city_delivery" destination="VY0-ri-eDb" id="kw1-Pw-1hJ"/>
+                <outlet property="date_delivery" destination="sBc-wa-C55" id="WqU-xE-4CT"/>
+                <outlet property="delete_button" destination="Xbj-bZ-g6o" id="E8x-Jo-mGB"/>
                 <outlet property="delivery_table" destination="f6t-68-hjC" id="i6Q-Cg-erd"/>
                 <outlet property="id_delivery" destination="zBJ-ef-pfL" id="fss-d5-bYm"/>
                 <outlet property="logo" destination="vFU-K4-4a2" id="nYx-BW-gW2"/>
@@ -65,12 +68,18 @@
                                             <color key="tintColor" systemColor="systemRedColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Supprimer"/>
+                                            <connections>
+                                                <action selector="supp_button:" destination="-1" eventType="touchUpInside" id="ddj-ve-y7p"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ru-PA-3Y6">
                                             <rect key="frame" x="444" y="723" width="182" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Editer"/>
+                                            <connections>
+                                                <action selector="edit_button:" destination="-1" eventType="touchUpInside" id="6Qs-jt-jIj"/>
+                                            </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBc-wa-C55">
                                             <rect key="frame" x="301" y="541" width="211" height="34"/>

@@ -89,6 +89,10 @@ class DeliveryViewController: UIViewController {
                     self.package_table.reloadData()
                 }
             case .failure(let error):
+                self.packages = []
+                DispatchQueue.main.async {
+                    self.package_table.reloadData()
+                }
                 print("Error: \(error.localizedDescription)")
             }
         }

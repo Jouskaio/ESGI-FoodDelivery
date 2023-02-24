@@ -13,15 +13,35 @@ class SpecialDeliveryViewController: UIViewController {
     @IBOutlet var logo: UIImageView!
     @IBOutlet var titlePage: UILabel!
     @IBOutlet var id_delivery: UILabel!
+    @IBOutlet var date_delivery: UITextField!
+    @IBOutlet var city_delivery: UITextField!
     
     @IBOutlet var delivery_table: UITableView!
     @IBOutlet var package_table: UITableView!
+    @IBOutlet var delete_button: UIButton!
     @IBAction func back_button(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func edit_button(_ sender: UIButton) {
+        if let dateString = date_delivery.text {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            if let date = dateFormatter.date(from: dateString) {
+                editDelivery(idDelivery: idDelivery, city: city_delivery.text ?? "", date: date)
+            } else {
+                showErrorPopup(message: "Le champ date n'est pas au bon format => yyyy-MM-dd.")
+            }
+        } else {
+            // Le champ date_delivery est vide
+        }
+    }
+    @IBAction func supp_button(_ sender: UIButton) {
+        deleteDelivery(idDelivery: idDelivery)
     }
     
     var delivery: [SpecialDelivery] = []
     var packages: [DeliveryPackage] = []
+    var idDelivery = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +50,7 @@ class SpecialDeliveryViewController: UIViewController {
         titlePage.font = UIFont.boldSystemFont(ofSize: 30.0)
         titlePage.text = "Liste des tournées"
         titlePage.numberOfLines = 0
+        delete_button.tintColor = .red
         
         self.delivery_table.dataSource = self
         self.delivery_table.delegate = self
@@ -76,6 +97,49 @@ class SpecialDeliveryViewController: UIViewController {
         }
     }
     
+    private func editDelivery(idDelivery: String, city: String, date: Date) {
+        let deliveryViewModel = ManageDeliveryViewModel()
+        deliveryViewModel.editDelivery(idDelivery: idDelivery, city: city, date: date) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.clearDetailDelivery()
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func deleteDelivery(idDelivery: String) {
+        let deliveryViewModel = ManageDeliveryViewModel()
+        deliveryViewModel.deleteDelivery(idDelivery: idDelivery) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.clearDetailDelivery()
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func showErrorPopup(message: String) {
+        let alertController = UIAlertController(title: "Erreur", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func clearDetailDelivery() {
+        self.city_delivery.text = ""
+        self.date_delivery.text = ""
+        self.id_delivery.text = "Livraison"
+        self.returnDeliveryEmployer(idEmployer: self.employer_id)
+        self.returnPackageDelivery(idDelivery: "")
+    }
+    
 }
 
 extension SpecialDeliveryViewController: UITableViewDataSource, UITableViewDelegate{
@@ -109,6 +173,10 @@ extension SpecialDeliveryViewController: UITableViewDataSource, UITableViewDeleg
             let specialDelivery = delivery[indexPath.row]
             id_delivery.text = "Livraison " + String(describing:specialDelivery.id)
             returnPackageDelivery(idDelivery: String(describing:specialDelivery.id) )
+            let dateArr = specialDelivery.delivery_date.components(separatedBy: "T")
+            date_delivery.text = dateArr[0]
+            city_delivery.text = specialDelivery.delivery_location
+            idDelivery = String(describing:specialDelivery.id)
         } else {
             // Traiter la sélection d'une cellule
             let package = packages[indexPath.row]

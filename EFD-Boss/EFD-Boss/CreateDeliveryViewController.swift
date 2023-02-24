@@ -42,6 +42,10 @@ class CreateDeliveryViewController: UIViewController {
                     self.packageTable.reloadData()
                 }
             case .failure(let error):
+                self.packages = []
+                DispatchQueue.main.async {
+                    self.packageTable.reloadData()
+                }
                 print("Error: \(error.localizedDescription)")
             }
         }
@@ -51,7 +55,7 @@ class CreateDeliveryViewController: UIViewController {
         let packageViewModel = ManagePackageViewModel()
         packageViewModel.chooseDeliveryPackage(idDelivery: idDelivery, idPackage: idPackage) { result in
             switch result {
-            case .success(let data):
+            case .success(_):
                 self.returnPackageEmployer(idEmployer: self.employer_id)
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")

@@ -80,4 +80,85 @@ class ManageDeliveryViewModel: ObservableObject {
         task.resume()
     }
     
+    func editDelivery(idDelivery: String, city: String, date: Date, completion: @escaping (Result<DeliveryMessage, Error>) -> Void) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
+        
+        let encodedDateString = dateString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        
+        let urlString = "http://192.168.1.27:2000/api/editDelivery?idDelivery=\(idDelivery)&city=\(encodedCity)&date=\(encodedDateString)"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+                completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
+                return
+            }
+            
+            do {
+                let delivery = try JSONDecoder().decode(DeliveryMessage.self, from: data)
+                completion(.success(delivery))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func deleteDelivery(idDelivery: String, completion: @escaping (Result<DeliveryMessage, Error>) -> Void) {
+        let urlString = "http://192.168.1.27:2000/api/deleteDelivery?idDelivery=\(idDelivery)"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+                completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
+                return
+            }
+            
+            do {
+                let delivery = try JSONDecoder().decode(DeliveryMessage.self, from: data)
+                completion(.success(delivery))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        
+        task.resume()
+    }
+    
 }

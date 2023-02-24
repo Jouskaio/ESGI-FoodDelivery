@@ -13,6 +13,12 @@ struct Delivery: Codable {
     var error: String?
 }
 
+struct DeliveryMessage: Codable {
+    var status: Int
+    var delivery: String
+    var error: String?
+}
+
 struct AllDelivery:Codable{
     var status: Int
     var delivery: [SpecialDelivery]
