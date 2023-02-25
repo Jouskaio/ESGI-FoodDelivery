@@ -39,7 +39,9 @@ class SpecialDeliveryViewController: UIViewController {
         deleteDelivery(idDelivery: idDelivery)
     }
     
+    let deliveryViewModel = ManageDeliveryViewModel()
     var delivery: [SpecialDelivery] = []
+    let packageViewModel = ManagePackageViewModel()
     var packages: [DeliveryPackage] = []
     var idDelivery = ""
     
@@ -64,7 +66,6 @@ class SpecialDeliveryViewController: UIViewController {
     }
     
     private func returnDeliveryEmployer(idEmployer: String) {
-        let deliveryViewModel = ManageDeliveryViewModel()
         deliveryViewModel.returnDeliveryEmployer(idEmployer: idEmployer) { result in
             switch result {
             case .success(let data):
@@ -79,7 +80,6 @@ class SpecialDeliveryViewController: UIViewController {
     }
     
     private func returnPackageDelivery(idDelivery: String) {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.returnPackageDelivery(idDelivery: idDelivery) { result in
             switch result {
             case .success(let data):
@@ -98,7 +98,6 @@ class SpecialDeliveryViewController: UIViewController {
     }
     
     private func editDelivery(idDelivery: String, city: String, date: Date) {
-        let deliveryViewModel = ManageDeliveryViewModel()
         deliveryViewModel.editDelivery(idDelivery: idDelivery, city: city, date: date) { result in
             switch result {
             case .success(_):
@@ -112,7 +111,6 @@ class SpecialDeliveryViewController: UIViewController {
     }
     
     private func deleteDelivery(idDelivery: String) {
-        let deliveryViewModel = ManageDeliveryViewModel()
         deliveryViewModel.deleteDelivery(idDelivery: idDelivery) { result in
             switch result {
             case .success(_):
@@ -178,9 +176,7 @@ extension SpecialDeliveryViewController: UITableViewDataSource, UITableViewDeleg
             city_delivery.text = specialDelivery.delivery_location
             idDelivery = String(describing:specialDelivery.id)
         } else {
-            // Traiter la sélection d'une cellule
             let package = packages[indexPath.row]
-            print(package)
         }
     }
 }

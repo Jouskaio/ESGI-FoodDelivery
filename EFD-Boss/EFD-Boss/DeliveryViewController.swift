@@ -37,8 +37,12 @@ class DeliveryViewController: UIViewController {
         self.present(specialViewController, animated: true, completion: nil)
     }
     
+    let employerViewModel = ManageEmployerViewModel()
     var employers: [Employer] = []
+    let packageViewModel = ManagePackageViewModel()
     var packages: [UnassignedPackage] = []
+    let deliveryViewModel = ManageDeliveryViewModel()
+    
     var employer_id: String = ""
     var delivery_id: String = ""
     var pressionButtton: Bool = false
@@ -65,7 +69,6 @@ class DeliveryViewController: UIViewController {
     }
     
     private func returnAllEmployers() {
-        let employerViewModel = ManageEmployerViewModel()
         employerViewModel.allEmployers { result in
             switch result {
             case .success(let data):
@@ -80,7 +83,6 @@ class DeliveryViewController: UIViewController {
     }
     
     private func returnPackageEmployer(idEmployer: String) {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.returnPackageEmployer(idEmployer: idEmployer){ result in
             switch result {
             case .success(let data):
@@ -99,7 +101,6 @@ class DeliveryViewController: UIViewController {
     }
     
     private func createDelivery(idEmployer: String) {
-        let deliveryViewModel = ManageDeliveryViewModel()
         deliveryViewModel.createDelivery(idEmployer: idEmployer) { result in
             switch result {
             case .success(let data):
@@ -144,7 +145,6 @@ extension DeliveryViewController: UITableViewDataSource, UITableViewDelegate{
             employer_id = String(describing:employer.id)
         } else {
             let package = packages[indexPath.row]
-            // Traiter la sélection d'une cellule
         }
     }
 }

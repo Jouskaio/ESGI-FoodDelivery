@@ -68,7 +68,6 @@ class HomeViewController: UIViewController {
     }
     
     private func returnSpecialPackage(idPackage: String) {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.returnPackage(idPackage: idPackage) { result in
             switch result {
             case .success(let data):
@@ -92,7 +91,6 @@ class HomeViewController: UIViewController {
     }
     
     private func getUnassignedPackage() {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.unassignedPackage { result in
             switch result {
             case .success(let data):
@@ -123,7 +121,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, UIPick
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let package = unassignedPackages[indexPath.row]
-        // Traiter la sélection d'une cellule
         returnSpecialPackage(idPackage: String(describing:package.id) )
     }
     

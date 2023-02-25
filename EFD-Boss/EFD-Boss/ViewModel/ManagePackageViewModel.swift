@@ -9,29 +9,27 @@ import Foundation
 
 class ManagePackageViewModel: ObservableObject {
     
+    let urlApi = ApiService()
+    
     func returnPackage(idPackage: String, completion: @escaping (Result<PackageData, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/package?idPackage=\(idPackage)"
+        let urlString = urlApi.baseUrl + "/package?idPackage=\(idPackage)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let package = try JSONDecoder().decode(PackageData.self, from: data)
                 completion(.success(package))
@@ -39,33 +37,28 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func returnPackageAssignated(idPackage: String, completion: @escaping (Result<AssignatedPackageData, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/specialPackage?idPackage=\(idPackage)"
+        let urlString = urlApi.baseUrl + "/specialPackage?idPackage=\(idPackage)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let package = try JSONDecoder().decode(AssignatedPackageData.self, from: data)
                 completion(.success(package))
@@ -73,33 +66,28 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func returnPackageEmployer(idEmployer: String, completion: @escaping (Result<AllUnassignedPackage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/packageEmployer?idEmployer=\(idEmployer)"
+        let urlString = urlApi.baseUrl + "/packageEmployer?idEmployer=\(idEmployer)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let package = try JSONDecoder().decode(AllUnassignedPackage.self, from: data)
                 completion(.success(package))
@@ -107,33 +95,28 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func returnPackageDelivery(idDelivery: String, completion: @escaping (Result<AllDeliveryPackage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/packageDelivery?idDelivery=\(idDelivery)"
+        let urlString = urlApi.baseUrl + "/packageDelivery?idDelivery=\(idDelivery)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let package = try JSONDecoder().decode(AllDeliveryPackage.self, from: data)
                 completion(.success(package))
@@ -141,33 +124,28 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func unassignedPackage(completion: @escaping (Result<AllUnassignedPackage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/package_unassigned"
+        let urlString = urlApi.baseUrl + "/package_unassigned"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let package = try JSONDecoder().decode(AllUnassignedPackage.self, from: data)
                 completion(.success(package))
@@ -175,33 +153,28 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func assignedPackage(completion: @escaping (Result<AllUnassignedPackage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/package_assigned"
+        let urlString = urlApi.baseUrl + "/package_assigned"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let package = try JSONDecoder().decode(AllUnassignedPackage.self, from: data)
                 completion(.success(package))
@@ -213,12 +186,11 @@ class ManagePackageViewModel: ObservableObject {
     }
     
     func chooseEmployerPackage(idEmployer: String, idPackage: String, completion: @escaping (Result<UpdatePackage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/chooseEmployer?idEmployer=\(idEmployer)&idPackage=\(idPackage)"
+        let urlString = urlApi.baseUrl + "/chooseEmployer?idEmployer=\(idEmployer)&idPackage=\(idPackage)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         
@@ -227,17 +199,14 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let updatePackage = try JSONDecoder().decode(UpdatePackage.self, from: data)
                 completion(.success(updatePackage))
@@ -245,17 +214,15 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func chooseDeliveryPackage(idDelivery: String, idPackage: String, completion: @escaping (Result<UpdatePackage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/chooseDelivery?idDelivery=\(idDelivery)&idPackage=\(idPackage)"
+        let urlString = urlApi.baseUrl + "/chooseDelivery?idDelivery=\(idDelivery)&idPackage=\(idPackage)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         
@@ -264,17 +231,14 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let updatePackage = try JSONDecoder().decode(UpdatePackage.self, from: data)
                 completion(.success(updatePackage))
@@ -282,7 +246,6 @@ class ManagePackageViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     

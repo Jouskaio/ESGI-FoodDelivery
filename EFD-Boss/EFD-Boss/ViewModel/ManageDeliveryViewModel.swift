@@ -9,13 +9,14 @@ import Foundation
 
 class ManageDeliveryViewModel: ObservableObject {
     
+    let urlApi = ApiService()
+    
     func createDelivery(idEmployer: String, completion: @escaping (Result<Delivery, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/createDelivery?idEmployer=\(idEmployer)"
+        let urlString = urlApi.baseUrl + "/createDelivery?idEmployer=\(idEmployer)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
@@ -24,17 +25,14 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let delivery = try JSONDecoder().decode(Delivery.self, from: data)
                 completion(.success(delivery))
@@ -42,33 +40,28 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func returnDeliveryEmployer(idEmployer: String, completion: @escaping (Result<AllDelivery, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/employerDelivery?idEmployer=\(idEmployer)"
+        let urlString = urlApi.baseUrl + "/employerDelivery?idEmployer=\(idEmployer)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let delivery = try JSONDecoder().decode(AllDelivery.self, from: data)
                 completion(.success(delivery))
@@ -76,7 +69,6 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
@@ -88,12 +80,11 @@ class ManageDeliveryViewModel: ObservableObject {
         let encodedDateString = dateString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
         
-        let urlString = "http://192.168.1.27:2000/api/editDelivery?idDelivery=\(idDelivery)&city=\(encodedCity)&date=\(encodedDateString)"
+        let urlString = urlApi.baseUrl + "/editDelivery?idDelivery=\(idDelivery)&city=\(encodedCity)&date=\(encodedDateString)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         
@@ -102,17 +93,14 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let delivery = try JSONDecoder().decode(DeliveryMessage.self, from: data)
                 completion(.success(delivery))
@@ -120,17 +108,15 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
     func deleteDelivery(idDelivery: String, completion: @escaping (Result<DeliveryMessage, Error>) -> Void) {
-        let urlString = "http://192.168.1.27:2000/api/deleteDelivery?idDelivery=\(idDelivery)"
+        let urlString = urlApi.baseUrl + "/deleteDelivery?idDelivery=\(idDelivery)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         
@@ -139,17 +125,14 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
                 return
             }
-            
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
                 return
             }
-            
             do {
                 let delivery = try JSONDecoder().decode(DeliveryMessage.self, from: data)
                 completion(.success(delivery))
@@ -157,7 +140,6 @@ class ManageDeliveryViewModel: ObservableObject {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     

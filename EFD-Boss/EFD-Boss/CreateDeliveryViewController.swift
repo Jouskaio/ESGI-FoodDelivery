@@ -10,6 +10,7 @@ import UIKit
 class CreateDeliveryViewController: UIViewController {
     var employer_id: String = ""
     var delivery_id: String = ""
+    let packageViewModel = ManagePackageViewModel()
     var packages: [UnassignedPackage] = []
     
     @IBOutlet var title_page: UILabel!
@@ -33,7 +34,6 @@ class CreateDeliveryViewController: UIViewController {
     }
     
     private func returnPackageEmployer(idEmployer: String) {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.returnPackageEmployer(idEmployer: idEmployer){ result in
             switch result {
             case .success(let data):
@@ -52,7 +52,6 @@ class CreateDeliveryViewController: UIViewController {
     }
     
     private func chooseDeliveryPackage(idDelivery: String, idPackage: String) {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.chooseDeliveryPackage(idDelivery: idDelivery, idPackage: idPackage) { result in
             switch result {
             case .success(_):

@@ -9,7 +9,6 @@ import UIKit
 
 class DetailDeliveryViewController: UIViewController {
     
-    
     @IBOutlet var package_table: UITableView!
     
     @IBOutlet var logo: UIImageView!
@@ -27,6 +26,7 @@ class DetailDeliveryViewController: UIViewController {
     @IBOutlet var delivery_id: UILabel!
     @IBOutlet var package_trackingID: UILabel!
     
+    let packageViewModel = ManagePackageViewModel()
     var assignedPackages: [UnassignedPackage] = []
     
     override func viewDidLoad() {
@@ -45,7 +45,6 @@ class DetailDeliveryViewController: UIViewController {
     }
     
     private func assignedPackage() {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.assignedPackage() { result in
             switch result {
             case .success(let data):
@@ -60,7 +59,6 @@ class DetailDeliveryViewController: UIViewController {
     }
     
     private func returnPackageAssignated(idPackage: String) {
-        let packageViewModel = ManagePackageViewModel()
         packageViewModel.returnPackageAssignated(idPackage: idPackage){ result in
             switch result {
             case .success(let data):
@@ -104,7 +102,6 @@ extension DetailDeliveryViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Traiter la sélection d'une cellule
         let package = assignedPackages[indexPath.row]
         returnPackageAssignated(idPackage: String(describing:package.id) )
     }
