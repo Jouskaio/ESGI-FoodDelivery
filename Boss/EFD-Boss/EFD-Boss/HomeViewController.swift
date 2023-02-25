@@ -12,8 +12,6 @@ class HomeViewController: UIViewController {
 
     // Variables
     let loginViewModel = ManageLogin()
-    var response: [LoginDetails] = [];
-    
     // Storyboard
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -22,19 +20,26 @@ class HomeViewController: UIViewController {
         let passwordText = passwordField.text
         let emailText = emailField.text
         if ((emailText != nil) && (passwordText != nil)) {
-            // Do something
+            // If information are corrects, then proceed to access to the application
             loginViewModel.returnLogin(email: emailText!, password: passwordText!) { login in
+                Logger.shared.log(.routing, .error, "Error: \(String(describing: login.status))")
                 if login.status == 200 {
                     // Utilisez les données du packageData ici
-                    if (login.login.employer_email == emailText &&
-                        login.login.employer_password == passwordText
+                    if (login.employer_email == emailText &&
+                        login.employer_password == passwordText
                     ) {
-                        let nextController = DeliverersViewController()
-                        self.navigationController?.pushViewController(nextController, animated: true)
+                        DispatchQueue.main.sync {
+                            self.errorLabel.isHidden = true
+                            let nextController = DeliverersViewController()
+                            self.navigationController?.pushViewController(nextController, animated: true)
+                        }
                     }
                 } else {
                     Logger.shared.log(.routing, .error, "Error: \(login.error ?? "Unknown error")")
-                    self.errorLabel.isHidden = false
+                    DispatchQueue.main.sync {
+                        self.errorLabel.text = login.error ?? "Password or email incorrect"
+                        self.errorLabel.isHidden = false
+                    }
                 }
             }
         }
@@ -42,7 +47,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        errorLabel.isHidden = true
+        self.errorLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
 }

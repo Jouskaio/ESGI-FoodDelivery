@@ -1,24 +1,22 @@
 //
-//  ManageLogin.swift
+//  ManageDeliverers.swift
 //  EFD-Boss
 //
-//  Created by Manon Salsou on 23/02/2023.
+//  Created by Manon Salsou on 25/02/2023.
 //
+
+import Foundation
 
 import Foundation
 import NSLoggerSwift
 
-class ManageLogin: ObservableObject {
+class ManageDeliverers: ObservableObject {
     
     let apiService = ApiService()
     
-    func returnLogin(email: String, password: String, completion: @escaping (LoginData) -> Void){
+    func returnDeliverers(completion: @escaping (DeliverersData) -> Void){
         var component = URLComponents()
-        component.path = "login"
-        component.queryItems = [
-            URLQueryItem(name: "email", value: "\(email)"),
-            URLQueryItem(name: "password", value: "\(password)")
-        ]
+        component.path = "deliverers"
         let completeStringUrl = apiService.baseUrl + (component.string ?? "")
         guard let url = URL(string: completeStringUrl) else {
             return
@@ -30,10 +28,10 @@ class ManageLogin: ObservableObject {
                 return
             }
             do {
-                Logger.shared.log(.routing, .error, "Error: \(String(describing: url))")
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let launch = try decoder.decode(LoginData.self, from: data!)
+                let launch = try decoder.decode(DeliverersData.self, from: data!)
+                Logger.shared.log(.routing, .noise, "\(launch)")
                 completion(launch)
             } catch {
                 print(error)

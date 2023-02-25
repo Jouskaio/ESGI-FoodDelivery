@@ -16,6 +16,9 @@
 		4373250C29A77A0600AA3214 /* NSLoggerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4373250629A7787500AA3214 /* NSLoggerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4377A95F29A8BF6A00D13B18 /* DeliverersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A95D29A8BF6A00D13B18 /* DeliverersViewController.swift */; };
 		4377A96029A8BF6A00D13B18 /* DeliverersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */; };
+		4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */; };
+		4377A96729A9FAA800D13B18 /* DeliverersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96629A9FAA800D13B18 /* DeliverersService.swift */; };
+		4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96829AA140800D13B18 /* ManageDeliverers.swift */; };
 		43EE8592299416B0006E6909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE8591299416B0006E6909 /* AppDelegate.swift */; };
 		43EE859B299416B2006E6909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EE859A299416B2006E6909 /* Assets.xcassets */; };
 		43EE859E299416B2006E6909 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EE859C299416B2006E6909 /* LaunchScreen.storyboard */; };
@@ -61,6 +64,9 @@
 		437324FE29A7787500AA3214 /* NSLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NSLogger.xcodeproj; path = NSLogger/NSLogger.xcodeproj; sourceTree = "<group>"; };
 		4377A95D29A8BF6A00D13B18 /* DeliverersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverersViewController.swift; sourceTree = "<group>"; };
 		4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliverersViewController.xib; sourceTree = "<group>"; };
+		4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelivererDataModel.swift; sourceTree = "<group>"; };
+		4377A96629A9FAA800D13B18 /* DeliverersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverersService.swift; sourceTree = "<group>"; };
+		4377A96829AA140800D13B18 /* ManageDeliverers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliverers.swift; sourceTree = "<group>"; };
 		43EE858E299416B0006E6909 /* EFD-Boss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EFD-Boss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EE8591299416B0006E6909 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EE859A299416B2006E6909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				437324F729A76DF800AA3214 /* LoginDataModel.swift */,
+				4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +118,7 @@
 			children = (
 				437324F529A6A2A200AA3214 /* APISevice.swift */,
 				437324F929A7710B00AA3214 /* ManageLogin.swift */,
+				4377A96829AA140800D13B18 /* ManageDeliverers.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -139,6 +147,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4377A96529A9FA8E00D13B18 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4377A96629A9FAA800D13B18 /* DeliverersService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		43EE8585299416B0006E6909 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +177,7 @@
 			children = (
 				437324FD29A7781300AA3214 /* Submodule */,
 				43EE8591299416B0006E6909 /* AppDelegate.swift */,
+				4377A96529A9FA8E00D13B18 /* Service */,
 				437324F429A6A28F00AA3214 /* API */,
 				437324F329A6A25800AA3214 /* Views */,
 				437324F229A6A24900AA3214 /* Controllers */,
@@ -270,7 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4377A96729A9FAA800D13B18 /* DeliverersService.swift in Sources */,
+				4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */,
 				437324FA29A7710B00AA3214 /* ManageLogin.swift in Sources */,
+				4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */,
 				4377A95F29A8BF6A00D13B18 /* DeliverersViewController.swift in Sources */,
 				43EE8592299416B0006E6909 /* AppDelegate.swift in Sources */,
 				437324EF29A6A00400AA3214 /* HomeViewController.swift in Sources */,
@@ -419,7 +439,7 @@
 				INFOPLIST_FILE = "EFD-Boss/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,7 +469,7 @@
 				INFOPLIST_FILE = "EFD-Boss/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
