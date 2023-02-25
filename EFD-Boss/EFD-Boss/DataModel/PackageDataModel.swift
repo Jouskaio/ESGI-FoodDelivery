@@ -29,6 +29,7 @@ struct Package: Codable {
 struct AssignatedPackageData:Codable{
     var status: Int
     var package: AssignatedPackage
+    var employer: Employer
     var error: String?
 }
 
@@ -44,6 +45,7 @@ struct AssignatedPackage: Codable {
     let package_recovery_city: String?
     let package_id_employer: Int
     let package_id_delivery: Int
+    let package_trackingid: Int?
 }
 
 struct AllUnassignedPackage:Codable{

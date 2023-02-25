@@ -74,8 +74,13 @@ class DetailDeliveryViewController: UIViewController {
                     self.destination_city.text = data.package.package_destination_city
                     let deadlineArr = data.package.package_deadline.components(separatedBy: "T")
                     self.package_date.text = deadlineArr[0]
-                    self.package_employer.text = String(describing:data.package.package_id_employer)
+                    self.package_employer.text = data.employer.employer_firstname + " " + data.employer.employer_name
                     self.delivery_id.text = "Livraison n°" + String(describing:data.package.package_id_delivery)
+                    if(data.package.package_trackingid != nil) {
+                        self.package_trackingID.text = "TrackingID: " + String(data.package.package_trackingid ?? 0)
+                    } else {
+                        self.package_trackingID.text = "TrackingID:"
+                    }
                 }
             case .failure(let error):
                 print("Error: \(error.localizedDescription)")
