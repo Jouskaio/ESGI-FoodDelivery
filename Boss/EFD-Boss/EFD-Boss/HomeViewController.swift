@@ -21,23 +21,28 @@ class HomeViewController: UIViewController {
         let emailText = emailField.text
         if ((emailText != nil) && (passwordText != nil)) {
             // If information are corrects, then proceed to access to the application
-            loginViewModel.returnLogin(email: emailText!, password: passwordText!) { login in
-                Logger.shared.log(.routing, .error, "Error: \(String(describing: login.status))")
-                if login.status == 200 {
-                    // Utilisez les données du packageData ici
-                    if (login.employer_email == emailText &&
-                        login.employer_password == passwordText
-                    ) {
+            loginViewModel.returnLogin(email: emailText!, password: passwordText!) { result in
+                switch result {
+                case .success(let data):
+                    if data.status == 200 {
+                        // Utilisez les données du packageData ici
+                        if (data.employer.employer_email == emailText &&
+                            data.employer.employer_password == passwordText
+                        ) {
+                            DispatchQueue.main.sync {
+                                self.errorLabel.isHidden = true
+                                let nextController = DeliverersViewController()
+                                self.navigationController?.pushViewController(nextController, animated: true)
+                            }
+                        }
+                    } else {
                         DispatchQueue.main.sync {
                             self.errorLabel.isHidden = true
-                            let nextController = DeliverersViewController()
-                            self.navigationController?.pushViewController(nextController, animated: true)
                         }
                     }
-                } else {
-                    Logger.shared.log(.routing, .error, "Error: \(login.error ?? "Unknown error")")
+                case .failure(let error):
                     DispatchQueue.main.sync {
-                        self.errorLabel.text = login.error ?? "Password or email incorrect"
+                        self.errorLabel.text = "Network error : \(error)"
                         self.errorLabel.isHidden = false
                     }
                 }

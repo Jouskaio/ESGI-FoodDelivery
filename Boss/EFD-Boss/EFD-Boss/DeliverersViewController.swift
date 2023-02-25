@@ -7,11 +7,14 @@
 
 import UIKit
 import NSLoggerSwift
+import CoreLocation
 
 class DeliverersViewController: UIViewController {
     let deliverersViewModel = ManageDeliverers()
-    var delivererService: DeliverersService = DeliverersInMemoryService()
-    var deliverers: [DeliverersData] = [] // Data in deliverers.deliverers need to go here
+    var deliverers: [DelivererDetail] = [] // Data in deliverers.deliverers need to go here
+    var locationManager: CLLocationManager?
+    var zip: String = ""
+    var city: String = ""
     
     @IBOutlet weak var tableDeliverers: UITableView!
     @IBOutlet weak var nameText: UILabel!
@@ -30,12 +33,23 @@ class DeliverersViewController: UIViewController {
         super.viewDidLoad()
         self.tableDeliverers.dataSource = self
         // TODO: Ajouter la requête API ici
-        deliverersViewModel.returnDeliverers() { deliverer in
-            if deliverer.status == 200 {
-                // Utilisez les données du packageData ici
-                Logger.shared.log(.routing, .error, "Error: \(deliverer.deliverers[0].deliverer_firstname )")
-            } else {
-                Logger.shared.log(.routing, .error, "Error: \(deliverer.error ?? "Unknown error")")
+        deliverersViewModel.returnDeliverers() { result in
+            switch result {
+            case .success(let data):
+                if data.status == 200 {
+                    // Utilisez les données du packageData ici
+                    data.deliverers.forEach {
+                        self.deliverers.append($0)
+                    }
+                    DispatchQueue.main.sync {
+                        self.deliverers = self.deliverers
+                        self.tableDeliverers.reloadData()
+                    }
+                }
+            case .failure(let error):
+                DispatchQueue.main.sync {
+                    print("Network error : \(error)")
+                }
             }
         }
     }
@@ -53,7 +67,7 @@ class DeliverersViewController: UIViewController {
 
 }
 
-extension DeliverersViewController: UITableViewDataSource {
+extension DeliverersViewController: UITableViewDataSource, CLLocationManagerDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.deliverers.count
     }
@@ -61,7 +75,31 @@ extension DeliverersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let deliverer = self.deliverers[indexPath.row]
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = "\(String(describing: deliverer.status))"
+        // Convert latitude longitude to GPS address
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        center.latitude = Double(deliverer.location_latitude)
+        center.longitude = Double(deliverer.location_longitude)
+        let location: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        let geocoder: CLGeocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            let pm = placemarks! as [CLPlacemark]
+            self.zip = pm[0].postalCode ?? ""
+            self.city = pm[0].locality ?? ""
+            if (error != nil) {
+                print("reverse geodcode fail: \(error!.localizedDescription)")
+            }
+            //self.numTextField.text = placemark.subThoroughfare
+            //self.streetTextField.text = placemark.thoroughfare
+            //self.cityTextField.text = placemark.locality
+            //self.zipTextField.text = placemark.postalCode
+            //self.countryTextField.text = placemark.country
+        }
+        print("ZIP \(self.zip)")
+        print("CITY \(self.city)")
+        cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(self.zip) \(self.city)"
+        cell.textLabel?.numberOfLines = 0
+
         return cell
     }
+
 }

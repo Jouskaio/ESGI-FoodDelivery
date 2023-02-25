@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434599D029AA67F5002E4297 /* NSLoggerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */; };
+		434599D129AA67F5002E4297 /* NSLoggerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		437324EF29A6A00400AA3214 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324ED29A6A00400AA3214 /* HomeViewController.swift */; };
 		437324F029A6A00400AA3214 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437324EE29A6A00400AA3214 /* HomeViewController.xib */; };
 		437324F629A6A2A200AA3214 /* APISevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324F529A6A2A200AA3214 /* APISevice.swift */; };
 		437324F829A76DF900AA3214 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324F729A76DF800AA3214 /* LoginDataModel.swift */; };
 		437324FA29A7710B00AA3214 /* ManageLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324F929A7710B00AA3214 /* ManageLogin.swift */; };
-		4373250B29A77A0600AA3214 /* NSLoggerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4373250629A7787500AA3214 /* NSLoggerSwift.framework */; };
-		4373250C29A77A0600AA3214 /* NSLoggerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4373250629A7787500AA3214 /* NSLoggerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4377A95F29A8BF6A00D13B18 /* DeliverersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A95D29A8BF6A00D13B18 /* DeliverersViewController.swift */; };
 		4377A96029A8BF6A00D13B18 /* DeliverersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */; };
 		4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */; };
-		4377A96729A9FAA800D13B18 /* DeliverersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96629A9FAA800D13B18 /* DeliverersService.swift */; };
 		4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96829AA140800D13B18 /* ManageDeliverers.swift */; };
 		43EE8592299416B0006E6909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE8591299416B0006E6909 /* AppDelegate.swift */; };
 		43EE859B299416B2006E6909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EE859A299416B2006E6909 /* Assets.xcassets */; };
@@ -25,16 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4373250329A7787500AA3214 /* PBXContainerItemProxy */ = {
+		434599CC29AA67E3002E4297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 437324FE29A7787500AA3214 /* NSLogger.xcodeproj */;
+			containerPortal = 434599C729AA67E3002E4297 /* NSLogger.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = DAAD0F961C4BE27B0042313D;
 			remoteInfo = NSLogger;
 		};
-		4373250529A7787500AA3214 /* PBXContainerItemProxy */ = {
+		434599CE29AA67E3002E4297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 437324FE29A7787500AA3214 /* NSLogger.xcodeproj */;
+			containerPortal = 434599C729AA67E3002E4297 /* NSLogger.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3D0EE4BC1EC1241100D0FA63;
 			remoteInfo = NSLoggerSwift;
@@ -48,7 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4373250C29A77A0600AA3214 /* NSLoggerSwift.framework in Embed Frameworks */,
+				434599D129AA67F5002E4297 /* NSLoggerSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,16 +55,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		434599C729AA67E3002E4297 /* NSLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NSLogger.xcodeproj; path = NSLogger/NSLogger.xcodeproj; sourceTree = "<group>"; };
 		437324ED29A6A00400AA3214 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		437324EE29A6A00400AA3214 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		437324F529A6A2A200AA3214 /* APISevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISevice.swift; sourceTree = "<group>"; };
 		437324F729A76DF800AA3214 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		437324F929A7710B00AA3214 /* ManageLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageLogin.swift; sourceTree = "<group>"; };
-		437324FE29A7787500AA3214 /* NSLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NSLogger.xcodeproj; path = NSLogger/NSLogger.xcodeproj; sourceTree = "<group>"; };
 		4377A95D29A8BF6A00D13B18 /* DeliverersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverersViewController.swift; sourceTree = "<group>"; };
 		4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliverersViewController.xib; sourceTree = "<group>"; };
 		4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelivererDataModel.swift; sourceTree = "<group>"; };
-		4377A96629A9FAA800D13B18 /* DeliverersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverersService.swift; sourceTree = "<group>"; };
 		4377A96829AA140800D13B18 /* ManageDeliverers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliverers.swift; sourceTree = "<group>"; };
 		43EE858E299416B0006E6909 /* EFD-Boss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EFD-Boss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EE8591299416B0006E6909 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,13 +77,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4373250B29A77A0600AA3214 /* NSLoggerSwift.framework in Frameworks */,
+				434599D029AA67F5002E4297 /* NSLoggerSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434599C829AA67E3002E4297 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				434599CD29AA67E3002E4297 /* NSLogger.framework */,
+				434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		437324EC29A69FAF00AA3214 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,18 +133,9 @@
 		437324FD29A7781300AA3214 /* Submodule */ = {
 			isa = PBXGroup;
 			children = (
-				437324FE29A7787500AA3214 /* NSLogger.xcodeproj */,
+				434599C729AA67E3002E4297 /* NSLogger.xcodeproj */,
 			);
 			path = Submodule;
-			sourceTree = "<group>";
-		};
-		437324FF29A7787500AA3214 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4373250429A7787500AA3214 /* NSLogger.framework */,
-				4373250629A7787500AA3214 /* NSLoggerSwift.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4373250729A778B900AA3214 /* Frameworks */ = {
@@ -145,14 +143,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4377A96529A9FA8E00D13B18 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				4377A96629A9FAA800D13B18 /* DeliverersService.swift */,
-			);
-			name = Service;
 			sourceTree = "<group>";
 		};
 		43EE8585299416B0006E6909 = {
@@ -177,7 +167,6 @@
 			children = (
 				437324FD29A7781300AA3214 /* Submodule */,
 				43EE8591299416B0006E6909 /* AppDelegate.swift */,
-				4377A96529A9FA8E00D13B18 /* Service */,
 				437324F429A6A28F00AA3214 /* API */,
 				437324F329A6A25800AA3214 /* Views */,
 				437324F229A6A24900AA3214 /* Controllers */,
@@ -240,8 +229,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 437324FF29A7787500AA3214 /* Products */;
-					ProjectRef = 437324FE29A7787500AA3214 /* NSLogger.xcodeproj */;
+					ProductGroup = 434599C829AA67E3002E4297 /* Products */;
+					ProjectRef = 434599C729AA67E3002E4297 /* NSLogger.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -252,18 +241,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		4373250429A7787500AA3214 /* NSLogger.framework */ = {
+		434599CD29AA67E3002E4297 /* NSLogger.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = NSLogger.framework;
-			remoteRef = 4373250329A7787500AA3214 /* PBXContainerItemProxy */;
+			remoteRef = 434599CC29AA67E3002E4297 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4373250629A7787500AA3214 /* NSLoggerSwift.framework */ = {
+		434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = NSLoggerSwift.framework;
-			remoteRef = 4373250529A7787500AA3214 /* PBXContainerItemProxy */;
+			remoteRef = 434599CE29AA67E3002E4297 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -287,7 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4377A96729A9FAA800D13B18 /* DeliverersService.swift in Sources */,
 				4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */,
 				437324FA29A7710B00AA3214 /* ManageLogin.swift in Sources */,
 				4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */,

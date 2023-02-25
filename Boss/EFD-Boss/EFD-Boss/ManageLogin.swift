@@ -12,32 +12,36 @@ class ManageLogin: ObservableObject {
     
     let apiService = ApiService()
     
-    func returnLogin(email: String, password: String, completion: @escaping (LoginData) -> Void){
-        var component = URLComponents()
-        component.path = "login"
-        component.queryItems = [
-            URLQueryItem(name: "email", value: "\(email)"),
-            URLQueryItem(name: "password", value: "\(password)")
-        ]
-        let completeStringUrl = apiService.baseUrl + (component.string ?? "")
-        guard let url = URL(string: completeStringUrl) else {
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url){data, res, error in
-            if(error != nil) {
-                print(error?.localizedDescription as Any)
-                return
-            }
-            do {
-                Logger.shared.log(.routing, .error, "Error: \(String(describing: url))")
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let launch = try decoder.decode(LoginData.self, from: data!)
-                completion(launch)
-            } catch {
-                print(error)
-            }
-        }.resume()
+    func returnLogin(email: String, password: String, completion: @escaping (Result<LoginData, Error>) -> Void){
+        let urlString = apiService.baseUrl+"login?email=\(email)&password=\(password)"
+                guard let url = URL(string: urlString) else {
+                    completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
+                    return
+                }
+
+                let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                    if let error = error {
+                        completion(.failure(error))
+                        return
+                    }
+
+                    guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+                        completion(.failure(NSError(domain: "Invalid response", code: 0, userInfo: nil)))
+                        return
+                    }
+
+                    guard let data = data else {
+                        completion(.failure(NSError(domain: "No data", code: 0, userInfo: nil)))
+                        return
+                    }
+
+                    do {
+                        let login = try JSONDecoder().decode(LoginData.self, from: data)
+                        completion(.success(login))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                }
+                task.resume()
     }
 }
