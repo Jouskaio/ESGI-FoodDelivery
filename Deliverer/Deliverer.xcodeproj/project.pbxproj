@@ -30,6 +30,8 @@
 		DD73678029A6EE8000D66D3E /* TourneeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73677F29A6EE8000D66D3E /* TourneeCell.swift */; };
 		DD73678429A7704C00D66D3E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD73678329A7704B00D66D3E /* Media.xcassets */; };
 		DD73678629A7802500D66D3E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73678529A7802500D66D3E /* CustomTextField.swift */; };
+		E02A5B8929AB7E2C000D27E4 /* ManagePackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5B8829AB7E2C000D27E4 /* ManagePackageViewModel.swift */; };
+		E02A5B8B29AB7EB9000D27E4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02A5B8A29AB7EB9000D27E4 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		DD73677F29A6EE8000D66D3E /* TourneeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneeCell.swift; sourceTree = "<group>"; };
 		DD73678329A7704B00D66D3E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		DD73678529A7802500D66D3E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E02A5B8829AB7E2C000D27E4 /* ManagePackageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePackageViewModel.swift; sourceTree = "<group>"; };
+		E02A5B8A29AB7EB9000D27E4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				DD73677D29A6EE3500D66D3E /* Colis.swift */,
 				DD73677B29A6EDF800D66D3E /* Tournee.swift */,
 				DD2C932A29AA653D00FD6A14 /* Employer.swift */,
+				E02A5B8A29AB7EB9000D27E4 /* Package.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				DD2C932829AA63AF00FD6A14 /* ManageEmployerViewModel.swift */,
+				E02A5B8829AB7E2C000D27E4 /* ManagePackageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,7 +359,9 @@
 				DD60A1CB2997EE2E005219F4 /* ViewController.swift in Sources */,
 				DD60A1C72997EE2E005219F4 /* AppDelegate.swift in Sources */,
 				DD73678629A7802500D66D3E /* CustomTextField.swift in Sources */,
+				E02A5B8929AB7E2C000D27E4 /* ManagePackageViewModel.swift in Sources */,
 				DD60A1C92997EE2E005219F4 /* SceneDelegate.swift in Sources */,
+				E02A5B8B29AB7EB9000D27E4 /* Package.swift in Sources */,
 				DD73677E29A6EE3500D66D3E /* Colis.swift in Sources */,
 				DD2C932929AA63AF00FD6A14 /* ManageEmployerViewModel.swift in Sources */,
 				DD73678029A6EE8000D66D3E /* TourneeCell.swift in Sources */,

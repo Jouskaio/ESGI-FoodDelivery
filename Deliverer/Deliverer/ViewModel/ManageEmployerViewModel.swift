@@ -9,9 +9,11 @@ import Foundation
 
 class ManageEmployerViewModel: ObservableObject {
     
+    let urlApi = ApiService()
+    
     func createEmployer(employer_firstname : String, employer_name: String,  employer_email : String, employer_phone : String, employer_password : String,  completion: @escaping (Result<EmployerMessage, Error>) -> Void) {
     
-        let urlString = "http://192.168.1.47:2000/api/createEmployer?employer_firstname=\(employer_firstname)&employer_name=\(employer_name)&employer_email=\(employer_email)&employer_phone=\(employer_phone)&employer_password=\(employer_password)"
+        let urlString = urlApi.baseUrl + "/createEmployer?employer_firstname=\(employer_firstname)&employer_name=\(employer_name)&employer_email=\(employer_email)&employer_phone=\(employer_phone)&employer_password=\(employer_password)"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
@@ -49,9 +51,9 @@ class ManageEmployerViewModel: ObservableObject {
     }
     // Log in
     
-    func connexion (employer_email : String,employer_password : String,  completion: @escaping (Result<EmployerMessage, Error>) -> Void) {
+    func connexion (email : String,password : String,  completion: @escaping (Result<LoginEmployer, Error>) -> Void) {
     
-        let urlString = "http://192.168.1.47:2000/api/login?email=\(employer_email)&password=\(employer_password)"
+        let urlString = urlApi.baseUrl + "/login?email=\(email)&password=\(password)"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
@@ -78,8 +80,8 @@ class ManageEmployerViewModel: ObservableObject {
             }
             
             do {
-                let employerMessage = try JSONDecoder().decode(EmployerMessage.self, from: data)
-                completion(.success(employerMessage))
+                let employer = try JSONDecoder().decode(LoginEmployer.self, from: data)
+                completion(.success(employer))
             } catch {
                 completion(.failure(error))
             }
