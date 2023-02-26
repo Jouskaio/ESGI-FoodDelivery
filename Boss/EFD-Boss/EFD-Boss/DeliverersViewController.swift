@@ -74,6 +74,7 @@ extension DeliverersViewController: UITableViewDataSource, CLLocationManagerDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let deliverer = self.deliverers[indexPath.row]
+        Logger.shared.log(.app, .debug, "\(deliverer)")
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         // Convert latitude longitude to GPS address
         var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
@@ -88,18 +89,22 @@ extension DeliverersViewController: UITableViewDataSource, CLLocationManagerDele
             if (error != nil) {
                 print("reverse geodcode fail: \(error!.localizedDescription)")
             }
+            //Set it in geocoder because it's a async request, if the text cell definition is in the tableview
+            // it will be in the main thread so this will display nothing
+            cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(self.zip) \(self.city)"
+            cell.textLabel?.numberOfLines = 0
             //self.numTextField.text = placemark.subThoroughfare
             //self.streetTextField.text = placemark.thoroughfare
             //self.cityTextField.text = placemark.locality
             //self.zipTextField.text = placemark.postalCode
             //self.countryTextField.text = placemark.country
         }
-        print("ZIP \(self.zip)")
-        print("CITY \(self.city)")
-        cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(self.zip) \(self.city)"
-        cell.textLabel?.numberOfLines = 0
-
         return cell
     }
+    
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Logger.shared.log(.app, .info, "section: \(indexPath.section)")
+        Logger.shared.log(.app, .info, "section: \(indexPath.row)")
+    }*/
 
 }
