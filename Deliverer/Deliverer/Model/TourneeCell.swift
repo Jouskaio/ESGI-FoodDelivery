@@ -18,4 +18,5 @@ class TourneeCell: UITableViewCell {
         colisLabel.text = "\(tournee.colis.count) colis"
     }
 }
+
 */
