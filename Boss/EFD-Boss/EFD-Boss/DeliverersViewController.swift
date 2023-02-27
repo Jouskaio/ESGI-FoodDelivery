@@ -45,6 +45,30 @@ class DeliverersViewController: UIViewController {
      ----------------------------
      */
 
+    @IBAction func deliveryViewButton(_ sender: Any) {
+        let nextController = DeliveryViewController(nibName: "DeliveryViewController", bundle: nil)
+                nextController.modalPresentationStyle = .fullScreen
+                self.present(nextController, animated: true, completion: nil)
+    }
+    
+    @IBAction func AssignatedPackageButton(_ sender: Any) {
+        let nextController = AssignedPackageViewController(nibName: "AssignedPackageViewController", bundle: nil)
+                nextController.modalPresentationStyle = .fullScreen
+                self.present(nextController, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func editButton(_ sender: Any) {
         validerButton.isHidden = false
         

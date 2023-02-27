@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -317,6 +318,32 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" textContentType="email"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1MM-tu-te4">
+                    <rect key="frame" x="783" y="722" width="329" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="329" id="4BH-oe-8V2"/>
+                        <constraint firstAttribute="height" constant="35" id="68J-4j-cMr"/>
+                    </constraints>
+                    <color key="tintColor" name="AccentColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Liste livreurs avec colis"/>
+                    <connections>
+                        <action selector="deliveryViewButton:" destination="-1" eventType="touchUpInside" id="arF-Qo-Od1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haV-A3-itD">
+                    <rect key="frame" x="783" y="673" width="329" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="329" id="Rjh-ZA-6C2"/>
+                        <constraint firstAttribute="height" constant="35" id="oiY-dJ-XRR"/>
+                    </constraints>
+                    <color key="tintColor" name="AccentColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Assignation colis aux livreurs"/>
+                    <connections>
+                        <action selector="AssignatedPackageButton:" destination="-1" eventType="touchUpInside" id="PbY-g2-gCg"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -328,6 +355,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zKq-xw-Fuz" secondAttribute="trailing" constant="60" id="6iV-hD-Tmx"/>
                 <constraint firstItem="UMC-81-raH" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="71i-VV-jzl"/>
                 <constraint firstItem="NZK-2Q-SRl" firstAttribute="top" secondItem="cHz-Tx-pLx" secondAttribute="bottom" constant="24" id="72m-D8-Xyn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="haV-A3-itD" secondAttribute="trailing" constant="68" id="7ds-iK-QRJ"/>
+                <constraint firstItem="UMC-81-raH" firstAttribute="top" secondItem="1MM-tu-te4" secondAttribute="bottom" constant="8" symbolic="YES" id="9F2-gc-fbJ"/>
                 <constraint firstItem="D30-04-Qmk" firstAttribute="top" secondItem="V0Y-Va-G8j" secondAttribute="bottom" constant="8" symbolic="YES" id="A3i-s2-5bx"/>
                 <constraint firstItem="IPG-bP-YuJ" firstAttribute="leading" secondItem="hbS-5H-4vs" secondAttribute="leading" id="Abg-Oi-VcE"/>
                 <constraint firstItem="Od0-XA-tLU" firstAttribute="leading" secondItem="V0Y-Va-G8j" secondAttribute="trailing" constant="79" id="AnI-Fu-23n"/>
@@ -335,18 +364,21 @@
                 <constraint firstItem="IPG-bP-YuJ" firstAttribute="leading" secondItem="596-sA-AuV" secondAttribute="leading" id="Cp4-5s-70r"/>
                 <constraint firstItem="V0Y-Va-G8j" firstAttribute="top" secondItem="zKq-xw-Fuz" secondAttribute="bottom" constant="14" id="EHG-c3-lrj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UMC-81-raH" secondAttribute="trailing" constant="68" id="EoP-jN-fSY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1MM-tu-te4" secondAttribute="trailing" constant="68" id="Gpi-UG-H08"/>
                 <constraint firstItem="cHz-Tx-pLx" firstAttribute="top" secondItem="7uD-zO-Cr2" secondAttribute="bottom" constant="8" symbolic="YES" id="IHI-NY-hq0"/>
                 <constraint firstItem="IPG-bP-YuJ" firstAttribute="leading" secondItem="T6b-aJ-aFK" secondAttribute="leading" id="Jmx-Sb-Ker"/>
                 <constraint firstItem="7uD-zO-Cr2" firstAttribute="top" secondItem="D30-04-Qmk" secondAttribute="bottom" constant="48" id="K0S-9t-bGK"/>
                 <constraint firstItem="D30-04-Qmk" firstAttribute="top" secondItem="la2-SK-002" secondAttribute="top" id="OaV-VM-CvD"/>
                 <constraint firstItem="596-sA-AuV" firstAttribute="top" secondItem="Tk6-95-utc" secondAttribute="bottom" constant="8" symbolic="YES" id="PTS-LD-9pJ"/>
                 <constraint firstItem="IPG-bP-YuJ" firstAttribute="leading" secondItem="Z4c-Hw-SYF" secondAttribute="leading" id="RUO-BA-aAv"/>
+                <constraint firstItem="1MM-tu-te4" firstAttribute="top" secondItem="haV-A3-itD" secondAttribute="bottom" constant="14" id="RsR-4V-dvw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Od0-XA-tLU" secondAttribute="trailing" constant="60" id="Tvk-NY-Jbl"/>
                 <constraint firstAttribute="bottom" secondItem="qaZ-BC-Rsx" secondAttribute="bottom" id="UZb-ih-yEo"/>
                 <constraint firstItem="3CY-p5-RQQ" firstAttribute="leading" secondItem="V5c-4b-lDv" secondAttribute="trailing" constant="60" id="UuR-Mc-7BL"/>
                 <constraint firstItem="la2-SK-002" firstAttribute="leading" secondItem="V5c-4b-lDv" secondAttribute="trailing" constant="60" id="V9P-83-Uho"/>
                 <constraint firstItem="iSt-oT-UCJ" firstAttribute="leading" secondItem="V5c-4b-lDv" secondAttribute="trailing" constant="60" id="Ws0-6h-6Hx"/>
                 <constraint firstItem="DiS-ia-EL3" firstAttribute="top" secondItem="08O-rO-JWs" secondAttribute="bottom" constant="32" id="XFB-xR-aOm"/>
+                <constraint firstItem="1MM-tu-te4" firstAttribute="top" secondItem="haV-A3-itD" secondAttribute="bottom" constant="14" id="XHO-VR-UT6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="08O-rO-JWs" secondAttribute="trailing" constant="60" id="Xf8-Yg-Knz"/>
                 <constraint firstItem="4Cp-Ro-DAY" firstAttribute="top" secondItem="08O-rO-JWs" secondAttribute="bottom" constant="82.5" id="aMB-Ru-1DA"/>
                 <constraint firstItem="iSt-oT-UCJ" firstAttribute="top" secondItem="08O-rO-JWs" secondAttribute="bottom" constant="82.5" id="brU-OT-xEM"/>

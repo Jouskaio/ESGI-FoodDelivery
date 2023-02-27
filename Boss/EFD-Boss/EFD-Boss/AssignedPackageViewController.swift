@@ -25,6 +25,14 @@ class AssignedPackageViewController: UIViewController {
     @IBOutlet weak var package_date_deadline: UILabel!
     
     
+    @IBAction func detailDeliveryButtton(_ sender: Any) {
+        DispatchQueue.main.sync {
+            let nextController = DetailDeliveryViewController()
+            self.navigationController?.pushViewController(nextController, animated: true)
+        }
+    }
+    
+    
     var id_package: Int = 0
     
     let packageViewModel = ManagePackageViewModel()
