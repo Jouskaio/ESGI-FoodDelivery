@@ -19,6 +19,22 @@
 		4377A96029A8BF6A00D13B18 /* DeliverersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */; };
 		4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */; };
 		4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377A96829AA140800D13B18 /* ManageDeliverers.swift */; };
+		4392208F29AC40190060A69C /* PackageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392208E29AC40190060A69C /* PackageDataModel.swift */; };
+		4392209329AC40370060A69C /* EmployerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392209229AC40370060A69C /* EmployerDataModel.swift */; };
+		4392209529AC405F0060A69C /* DeliveryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392209429AC405F0060A69C /* DeliveryDataModel.swift */; };
+		4392209729AC40A30060A69C /* ManagePackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392209629AC40A30060A69C /* ManagePackageViewModel.swift */; };
+		4392209929AC40B50060A69C /* ManageEmployerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392209829AC40B50060A69C /* ManageEmployerViewModel.swift */; };
+		4392209B29AC40C90060A69C /* ManageDeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392209A29AC40C90060A69C /* ManageDeliveryViewModel.swift */; };
+		4392209E29AC415B0060A69C /* AssignedPackageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392209C29AC415B0060A69C /* AssignedPackageViewController.swift */; };
+		4392209F29AC415B0060A69C /* AssignedPackageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4392209D29AC415B0060A69C /* AssignedPackageViewController.xib */; };
+		439220A229AC45680060A69C /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439220A029AC45680060A69C /* DeliveryViewController.swift */; };
+		439220A329AC45680060A69C /* DeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439220A129AC45680060A69C /* DeliveryViewController.xib */; };
+		439220A629AC472C0060A69C /* CreateDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439220A429AC472C0060A69C /* CreateDeliveryViewController.swift */; };
+		439220A729AC472C0060A69C /* CreateDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439220A529AC472C0060A69C /* CreateDeliveryViewController.xib */; };
+		439220AA29AC47BA0060A69C /* SpecialDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439220A829AC47BA0060A69C /* SpecialDeliveryViewController.swift */; };
+		439220AB29AC47BA0060A69C /* SpecialDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439220A929AC47BA0060A69C /* SpecialDeliveryViewController.xib */; };
+		439220AE29AC48C20060A69C /* DetailDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439220AC29AC48C20060A69C /* DetailDeliveryViewController.swift */; };
+		439220AF29AC48C20060A69C /* DetailDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439220AD29AC48C20060A69C /* DetailDeliveryViewController.xib */; };
 		43EE8592299416B0006E6909 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EE8591299416B0006E6909 /* AppDelegate.swift */; };
 		43EE859B299416B2006E6909 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43EE859A299416B2006E6909 /* Assets.xcassets */; };
 		43EE859E299416B2006E6909 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43EE859C299416B2006E6909 /* LaunchScreen.storyboard */; };
@@ -67,6 +83,22 @@
 		4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliverersViewController.xib; sourceTree = "<group>"; };
 		4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelivererDataModel.swift; sourceTree = "<group>"; };
 		4377A96829AA140800D13B18 /* ManageDeliverers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliverers.swift; sourceTree = "<group>"; };
+		4392208E29AC40190060A69C /* PackageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDataModel.swift; sourceTree = "<group>"; };
+		4392209229AC40370060A69C /* EmployerDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerDataModel.swift; sourceTree = "<group>"; };
+		4392209429AC405F0060A69C /* DeliveryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDataModel.swift; sourceTree = "<group>"; };
+		4392209629AC40A30060A69C /* ManagePackageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePackageViewModel.swift; sourceTree = "<group>"; };
+		4392209829AC40B50060A69C /* ManageEmployerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEmployerViewModel.swift; sourceTree = "<group>"; };
+		4392209A29AC40C90060A69C /* ManageDeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliveryViewModel.swift; sourceTree = "<group>"; };
+		4392209C29AC415B0060A69C /* AssignedPackageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignedPackageViewController.swift; sourceTree = "<group>"; };
+		4392209D29AC415B0060A69C /* AssignedPackageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignedPackageViewController.xib; sourceTree = "<group>"; };
+		439220A029AC45680060A69C /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
+		439220A129AC45680060A69C /* DeliveryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeliveryViewController.xib; sourceTree = "<group>"; };
+		439220A429AC472C0060A69C /* CreateDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeliveryViewController.swift; sourceTree = "<group>"; };
+		439220A529AC472C0060A69C /* CreateDeliveryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateDeliveryViewController.xib; sourceTree = "<group>"; };
+		439220A829AC47BA0060A69C /* SpecialDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialDeliveryViewController.swift; sourceTree = "<group>"; };
+		439220A929AC47BA0060A69C /* SpecialDeliveryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialDeliveryViewController.xib; sourceTree = "<group>"; };
+		439220AC29AC48C20060A69C /* DetailDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDeliveryViewController.swift; sourceTree = "<group>"; };
+		439220AD29AC48C20060A69C /* DetailDeliveryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDeliveryViewController.xib; sourceTree = "<group>"; };
 		43EE858E299416B0006E6909 /* EFD-Boss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EFD-Boss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43EE8591299416B0006E6909 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43EE859A299416B2006E6909 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				437324F729A76DF800AA3214 /* LoginDataModel.swift */,
+				4392208E29AC40190060A69C /* PackageDataModel.swift */,
+				4392209229AC40370060A69C /* EmployerDataModel.swift */,
+				4392209429AC405F0060A69C /* DeliveryDataModel.swift */,
 				4377A96329A93AAE00D13B18 /* DelivererDataModel.swift */,
 			);
 			path = Model;
@@ -107,6 +142,11 @@
 		437324F229A6A24900AA3214 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				439220A429AC472C0060A69C /* CreateDeliveryViewController.swift */,
+				439220A829AC47BA0060A69C /* SpecialDeliveryViewController.swift */,
+				4392209C29AC415B0060A69C /* AssignedPackageViewController.swift */,
+				439220A029AC45680060A69C /* DeliveryViewController.swift */,
+				439220AC29AC48C20060A69C /* DetailDeliveryViewController.swift */,
 				4377A95D29A8BF6A00D13B18 /* DeliverersViewController.swift */,
 				437324ED29A6A00400AA3214 /* HomeViewController.swift */,
 			);
@@ -118,6 +158,11 @@
 			children = (
 				4377A95E29A8BF6A00D13B18 /* DeliverersViewController.xib */,
 				437324EE29A6A00400AA3214 /* HomeViewController.xib */,
+				439220A129AC45680060A69C /* DeliveryViewController.xib */,
+				439220A529AC472C0060A69C /* CreateDeliveryViewController.xib */,
+				439220AD29AC48C20060A69C /* DetailDeliveryViewController.xib */,
+				439220A929AC47BA0060A69C /* SpecialDeliveryViewController.xib */,
+				4392209D29AC415B0060A69C /* AssignedPackageViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -127,6 +172,9 @@
 			children = (
 				437324F529A6A2A200AA3214 /* APISevice.swift */,
 				437324F929A7710B00AA3214 /* ManageLogin.swift */,
+				4392209629AC40A30060A69C /* ManagePackageViewModel.swift */,
+				4392209829AC40B50060A69C /* ManageEmployerViewModel.swift */,
+				4392209A29AC40C90060A69C /* ManageDeliveryViewModel.swift */,
 				4377A96829AA140800D13B18 /* ManageDeliverers.swift */,
 				434599D629AB6C0E002E4297 /* ManageDeliverer.swift */,
 			);
@@ -265,10 +313,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439220AF29AC48C20060A69C /* DetailDeliveryViewController.xib in Resources */,
+				4392209F29AC415B0060A69C /* AssignedPackageViewController.xib in Resources */,
 				43EE859E299416B2006E6909 /* LaunchScreen.storyboard in Resources */,
+				439220AB29AC47BA0060A69C /* SpecialDeliveryViewController.xib in Resources */,
+				439220A329AC45680060A69C /* DeliveryViewController.xib in Resources */,
 				4377A96029A8BF6A00D13B18 /* DeliverersViewController.xib in Resources */,
 				43EE859B299416B2006E6909 /* Assets.xcassets in Resources */,
 				437324F029A6A00400AA3214 /* HomeViewController.xib in Resources */,
+				439220A729AC472C0060A69C /* CreateDeliveryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,13 +334,24 @@
 			files = (
 				4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */,
 				437324FA29A7710B00AA3214 /* ManageLogin.swift in Sources */,
+				439220AA29AC47BA0060A69C /* SpecialDeliveryViewController.swift in Sources */,
 				4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */,
 				434599D729AB6C0F002E4297 /* ManageDeliverer.swift in Sources */,
+				4392209929AC40B50060A69C /* ManageEmployerViewModel.swift in Sources */,
+				4392209329AC40370060A69C /* EmployerDataModel.swift in Sources */,
 				4377A95F29A8BF6A00D13B18 /* DeliverersViewController.swift in Sources */,
 				43EE8592299416B0006E6909 /* AppDelegate.swift in Sources */,
 				437324EF29A6A00400AA3214 /* HomeViewController.swift in Sources */,
+				439220A229AC45680060A69C /* DeliveryViewController.swift in Sources */,
+				439220A629AC472C0060A69C /* CreateDeliveryViewController.swift in Sources */,
+				4392209729AC40A30060A69C /* ManagePackageViewModel.swift in Sources */,
 				437324F629A6A2A200AA3214 /* APISevice.swift in Sources */,
+				4392209529AC405F0060A69C /* DeliveryDataModel.swift in Sources */,
+				439220AE29AC48C20060A69C /* DetailDeliveryViewController.swift in Sources */,
+				4392208F29AC40190060A69C /* PackageDataModel.swift in Sources */,
 				437324F829A76DF900AA3214 /* LoginDataModel.swift in Sources */,
+				4392209B29AC40C90060A69C /* ManageDeliveryViewModel.swift in Sources */,
+				4392209E29AC415B0060A69C /* AssignedPackageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
