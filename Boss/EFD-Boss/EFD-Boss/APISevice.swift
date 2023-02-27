@@ -7,5 +7,5 @@
 import Foundation
 
 class ApiService {
-    let baseUrl = "http://192.168.1.27:2000/api/"
+    let baseUrl = "http://10.33.3.36:2000/api/"
 }
