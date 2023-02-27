@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NSLoggerSwift
 
 struct DeliverersData: Codable {
     var status: Int?

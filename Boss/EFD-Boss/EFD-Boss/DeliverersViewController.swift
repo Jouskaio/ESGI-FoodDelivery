@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NSLoggerSwift
 import CoreLocation
 
 class DeliverersViewController: UIViewController {

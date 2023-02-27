@@ -8,7 +8,6 @@
 import Foundation
 
 import Foundation
-import NSLoggerSwift
 
 class ManageDeliverer: ObservableObject {
     

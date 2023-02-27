@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		434599D029AA67F5002E4297 /* NSLoggerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */; };
-		434599D129AA67F5002E4297 /* NSLoggerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		434599D729AB6C0F002E4297 /* ManageDeliverer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434599D629AB6C0E002E4297 /* ManageDeliverer.swift */; };
 		437324EF29A6A00400AA3214 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324ED29A6A00400AA3214 /* HomeViewController.swift */; };
 		437324F029A6A00400AA3214 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437324EE29A6A00400AA3214 /* HomeViewController.xib */; };
@@ -57,20 +55,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		4373250D29A77A0600AA3214 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				434599D129AA67F5002E4297 /* NSLoggerSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		434599C729AA67E3002E4297 /* NSLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NSLogger.xcodeproj; path = NSLogger/NSLogger.xcodeproj; sourceTree = "<group>"; };
 		434599D629AB6C0E002E4297 /* ManageDeliverer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliverer.swift; sourceTree = "<group>"; };
@@ -111,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				434599D029AA67F5002E4297 /* NSLoggerSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +222,6 @@
 				43EE858A299416B0006E6909 /* Sources */,
 				43EE858B299416B0006E6909 /* Frameworks */,
 				43EE858C299416B0006E6909 /* Resources */,
-				4373250D29A77A0600AA3214 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -497,6 +479,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,6 +510,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

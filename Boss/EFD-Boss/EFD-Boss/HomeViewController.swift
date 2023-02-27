@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NSLoggerSwift
 
 class HomeViewController: UIViewController {
 

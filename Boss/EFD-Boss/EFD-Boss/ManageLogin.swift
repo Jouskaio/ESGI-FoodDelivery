@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NSLoggerSwift
 
 class ManageLogin: ObservableObject {
     
