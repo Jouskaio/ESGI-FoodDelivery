@@ -322,26 +322,25 @@ extension DeliverersViewController: UITableViewDataSource, CLLocationManagerDele
             let pm = (placemarks!) as [CLPlacemark]
             self.zip = pm[0].postalCode!
             self.city = pm[0].locality!
-            Logger.shared.log(.app, .info, "\(deliverer)")
-
-            deliverer.location_zip = pm[0].postalCode!
-            deliverer.location_city = pm[0].locality!
             if (error != nil) {
                 print("reverse geodcode fail: \(error!.localizedDescription)")
             }
             //Set it in geocoder because it's a async request, if the text cell definition is in the tableview
             // it will be in the main thread so this will display nothing
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(self.zip) \(self.city)"
             // Update profil description with the last deliverer
             self.nameText.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)"
             self.mailText.text = "\(deliverer.deliverer_email)"
             self.phoneText.text = "\(deliverer.deliverer_phone)"
-            self.zipText.text = "\(deliverer.location_zip)"
+            self.zipText.text = "\(String(describing: deliverer.location_zip))"
             self.totalText.text = "\(deliverer.deliverer_total) €"
             self.scoreText.text = "\(deliverer.deliverer_evaluation) / \(self.maxScore)"
             self.scoreProgress.progress = deliverer.deliverer_evaluation / self.maxScore
+            deliverer.location_zip = self.zip
+            deliverer.location_city = self.city
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(self.zip) \(self.city)"
         }
+        
         return cell
     }
     
