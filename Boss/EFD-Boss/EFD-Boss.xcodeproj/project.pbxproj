@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		434599D029AA67F5002E4297 /* NSLoggerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */; };
 		434599D129AA67F5002E4297 /* NSLoggerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 434599CF29AA67E3002E4297 /* NSLoggerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		434599D729AB6C0F002E4297 /* ManageDeliverer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434599D629AB6C0E002E4297 /* ManageDeliverer.swift */; };
 		437324EF29A6A00400AA3214 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324ED29A6A00400AA3214 /* HomeViewController.swift */; };
 		437324F029A6A00400AA3214 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 437324EE29A6A00400AA3214 /* HomeViewController.xib */; };
 		437324F629A6A2A200AA3214 /* APISevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437324F529A6A2A200AA3214 /* APISevice.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		434599C729AA67E3002E4297 /* NSLogger.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NSLogger.xcodeproj; path = NSLogger/NSLogger.xcodeproj; sourceTree = "<group>"; };
+		434599D629AB6C0E002E4297 /* ManageDeliverer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDeliverer.swift; sourceTree = "<group>"; };
 		437324ED29A6A00400AA3214 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		437324EE29A6A00400AA3214 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		437324F529A6A2A200AA3214 /* APISevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISevice.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				437324F529A6A2A200AA3214 /* APISevice.swift */,
 				437324F929A7710B00AA3214 /* ManageLogin.swift */,
 				4377A96829AA140800D13B18 /* ManageDeliverers.swift */,
+				434599D629AB6C0E002E4297 /* ManageDeliverer.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				4377A96429A93AAE00D13B18 /* DelivererDataModel.swift in Sources */,
 				437324FA29A7710B00AA3214 /* ManageLogin.swift in Sources */,
 				4377A96929AA140800D13B18 /* ManageDeliverers.swift in Sources */,
+				434599D729AB6C0F002E4297 /* ManageDeliverer.swift in Sources */,
 				4377A95F29A8BF6A00D13B18 /* DeliverersViewController.swift in Sources */,
 				43EE8592299416B0006E6909 /* AppDelegate.swift in Sources */,
 				437324EF29A6A00400AA3214 /* HomeViewController.swift in Sources */,

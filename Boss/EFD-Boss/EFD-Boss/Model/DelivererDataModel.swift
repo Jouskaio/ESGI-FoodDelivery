@@ -25,4 +25,7 @@ struct DelivererDetail: Codable {
     var location_latitude: Float
     var location_longitude: Float
     var deliverer_total: Float
+    var deliverer_evaluation: Float
+    var location_zip: String?
+    var location_city: String?
 }

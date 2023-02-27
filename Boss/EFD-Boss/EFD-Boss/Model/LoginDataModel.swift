@@ -17,4 +17,5 @@ struct LoginData: Codable {
 struct LoginDetail: Codable {
     var employer_email: String
     var employer_password: String
+    var id: Int
 }
