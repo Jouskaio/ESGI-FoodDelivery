@@ -13,8 +13,6 @@ class DeliverersViewController: UIViewController {
     let delivererViewModel = ManageDeliverer()
     var deliverers: [DelivererDetail] = [] // Data in deliverers.deliverers need to go here
     var locationManager: CLLocationManager?
-    var zip : String = ""
-    var city : String = ""
     let maxScore: Float = 5
     var currentRow: Int = 0
     var idDeliverer: Int = 0
@@ -46,26 +44,7 @@ class DeliverersViewController: UIViewController {
     /*
      ----------------------------
      */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @IBAction func editButton(_ sender: Any) {
         validerButton.isHidden = false
         
@@ -155,7 +134,7 @@ class DeliverersViewController: UIViewController {
             self.zipText.resignFirstResponder()
             
             //let deliverer = self.deliverers[currentRow]
-            let geocoder = CLGeocoder()
+            //let geocoder = CLGeocoder()
             /*if ((self.zipText.text != nil)) {
                 geocoder.geocodeAddressString(String(unsafeUninitializedCapacity: ((self.zipText.text))) { (placemarks, error) in
                     guard let placemark = placemarks.first else {
@@ -190,7 +169,7 @@ class DeliverersViewController: UIViewController {
                     nameText.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)"
                     mailText.text = "\(deliverer.deliverer_email)"
                     phoneText.text = "\(deliverer.deliverer_phone)"
-                    zipText.text = "\(String(describing: deliverer.location_zip))"
+                    zipText.text = "\(deliverer.location_zip)"
                     totalText.text = "\(deliverer.deliverer_total) €"
                     scoreText.text = "\(deliverer.deliverer_evaluation) / \(maxScore)"
                     scoreProgress.progress = deliverer.deliverer_evaluation / maxScore
@@ -210,7 +189,7 @@ class DeliverersViewController: UIViewController {
                     nameText.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)"
                     mailText.text = "\(deliverer.deliverer_email)"
                     phoneText.text = "\(deliverer.deliverer_phone)"
-                    zipText.text = "\(String(describing: deliverer.location_zip))"
+                    zipText.text = "\(deliverer.location_zip)"
                     totalText.text = "\(deliverer.deliverer_total) €"
                     scoreText.text = "\(deliverer.deliverer_evaluation) / \(maxScore)"
                     scoreProgress.progress = deliverer.deliverer_evaluation / maxScore
@@ -279,8 +258,29 @@ class DeliverersViewController: UIViewController {
             case .success(let data):
                 if data.status == 200 {
                     // Utilisez les données du packageData ici
-                    self.deliverers = data.deliverers
+                    var dataDeliverer = data.deliverers
+                    for i in 0..<dataDeliverer.count {
+                        // Convert latitude longitude to GPS address
+                        var deliverer = dataDeliverer[i]
+                        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+                        center.latitude = Double(deliverer.location_latitude)
+                        center.longitude = Double(deliverer.location_longitude)
+                        let location: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+                        let geocoder: CLGeocoder = CLGeocoder()
+                        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+                            let pm = (placemarks!) as [CLPlacemark]
+                            print("\(pm[0])")
+                            deliverer.location_zip = pm[0].postalCode!
+                            deliverer.location_city = pm[0].locality!
+                            deliverer.location_city = "HELLO"
+                            //print("\(pm[0])")
+                            if (error != nil) {
+                                print("reverse geodcode fail: \(error!.localizedDescription)")
+                            }
+                        }
+                    }
                     DispatchQueue.main.sync {
+                        self.deliverers = dataDeliverer
                         self.tableDeliverers.delegate = self
                         self.tableDeliverers.reloadData()
                     }
@@ -311,35 +311,15 @@ extension DeliverersViewController: UITableViewDataSource, CLLocationManagerDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         var deliverer = deliverers[indexPath.row]
-        // Convert latitude longitude to GPS address
-        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        center.latitude = Double(deliverer.location_latitude)
-        center.longitude = Double(deliverer.location_longitude)
-        let location: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
-        let geocoder: CLGeocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            let pm = (placemarks!) as [CLPlacemark]
-            self.zip = pm[0].postalCode!
-            self.city = pm[0].locality!
-            if (error != nil) {
-                print("reverse geodcode fail: \(error!.localizedDescription)")
-            }
-            //Set it in geocoder because it's a async request, if the text cell definition is in the tableview
-            // it will be in the main thread so this will display nothing
-            // Update profil description with the last deliverer
-            self.nameText.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)"
-            self.mailText.text = "\(deliverer.deliverer_email)"
-            self.phoneText.text = "\(deliverer.deliverer_phone)"
-            self.zipText.text = "\(String(describing: deliverer.location_zip))"
-            self.totalText.text = "\(deliverer.deliverer_total) €"
-            self.scoreText.text = "\(deliverer.deliverer_evaluation) / \(self.maxScore)"
-            self.scoreProgress.progress = deliverer.deliverer_evaluation / self.maxScore
-            deliverer.location_zip = self.zip
-            deliverer.location_city = self.city
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(self.zip) \(self.city)"
-        }
-        
+        self.nameText.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)"
+        self.mailText.text = "\(deliverer.deliverer_email)"
+        self.phoneText.text = "\(deliverer.deliverer_phone)"
+        self.zipText.text = "\(deliverer.location_zip)"
+        self.totalText.text = "\(deliverer.deliverer_total) €"
+        self.scoreText.text = "\(deliverer.deliverer_evaluation) / \(self.maxScore)"
+        self.scoreProgress.progress = deliverer.deliverer_evaluation / self.maxScore
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = "\(deliverer.deliverer_firstname) \( deliverer.deliverer_name)\n \(deliverer.location_zip) \(deliverer.location_city)"
         return cell
     }
     

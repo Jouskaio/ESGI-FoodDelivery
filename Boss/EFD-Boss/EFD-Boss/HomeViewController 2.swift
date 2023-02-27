@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NSLoggerSwift
 
 class HomeViewController: UIViewController {
 
@@ -23,12 +24,20 @@ class HomeViewController: UIViewController {
             loginViewModel.returnLogin(email: emailText!, password: passwordText!) { result in
                 switch result {
                 case .success(let data):
-                    // Utilisez les données du packageData ici
-                    if (data.employer.employer_email == emailText) {
+                    if data.status == 200 {
+                        // Utilisez les données du packageData ici
+                        if (data.employer.employer_email == emailText &&
+                            data.employer.employer_password == passwordText
+                        ) {
+                            DispatchQueue.main.sync {
+                                self.errorLabel.isHidden = true
+                                let nextController = DeliverersViewController()
+                                self.navigationController?.pushViewController(nextController, animated: true)
+                            }
+                        }
+                    } else {
                         DispatchQueue.main.sync {
                             self.errorLabel.isHidden = true
-                            let nextController = DeliverersViewController()
-                            self.navigationController?.pushViewController(nextController, animated: true)
                         }
                     }
                 case .failure(let error):
